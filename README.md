@@ -12,6 +12,7 @@
 - [常用命令](#常用命令)
 - [故障排除](#故障排除)
 - [注意事项](#注意事项)
+- [文档目录](#文档目录)
 
 ## 🚀 项目简介
 
@@ -58,7 +59,7 @@ docker compose ps
 docker compose logs -f freqtrade
 
 # 查看交易状态
-docker compose exec freqtrade freqtrade status
+freqtrade status
 ```
 
 ## ⚙️ 配置说明
@@ -129,10 +130,10 @@ class MyStrategy(IStrategy):
 
 ```bash
 # 测试策略语法
-docker compose exec freqtrade freqtrade test-pairlist --strategy MyStrategy
+freqtrade test-pairlist
 
 # 查看策略信息
-docker compose exec freqtrade freqtrade show-trades --strategy MyStrategy
+freqtrade show-trades --db-url sqlite:////freqtrade/user_data/tradesv3.dryrun.sqlite
 ```
 
 ## 📊 回测分析
@@ -141,7 +142,7 @@ docker compose exec freqtrade freqtrade show-trades --strategy MyStrategy
 
 ```bash
 # 下载 BTC 和 ETH 的 5 分钟数据（最近 30 天）
-docker compose exec freqtrade freqtrade download-data \
+freqtrade download-data \
   --pairs BTC/USDT:USDT ETH/USDT:USDT \
   --timeframes 5m \
   --days 30
@@ -151,7 +152,7 @@ docker compose exec freqtrade freqtrade download-data \
 
 ```bash
 # 使用示例策略回测
-docker compose exec freqtrade freqtrade backtesting \
+freqtrade backtesting \
   --config /freqtrade/user_data/config_backtest.json \
   --strategy SampleStrategy \
   --timerange 20240901-20240930 \
@@ -440,6 +441,21 @@ docker compose logs freqtrade | grep ERROR
 
 - **2025-09-17**: 初始版本，包含基础配置和可视化功能
 - **功能**: Web UI、回测分析、策略开发、实时监控
+
+## 📚 文档目录
+
+### 快速入门
+- **[快速开始指南](docs/QUICKSTART.md)** - 5分钟快速上手
+- **[学习路径指南](docs/LEARNING_PATH.md)** - 从零基础到精通的完整学习路径
+
+### 配置指南
+- **[配置详解](docs/CONFIG_GUIDE.md)** - 详细的配置参数说明和最佳实践
+
+### 知识笔记
+- **[知识点笔记](docs/KNOWLEDGE_NOTES.md)** - 重要概念和命令速查
+
+### 实用工具
+- **[show-trades.sh](docs/show-trades.sh)** - 便捷的交易记录查看脚本
 
 ---
 

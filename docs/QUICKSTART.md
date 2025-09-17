@@ -22,7 +22,7 @@ docker compose up -d
 
 ### 1. 下载数据
 ```bash
-docker compose exec freqtrade freqtrade download-data \
+freqtrade download-data \
   --pairs BTC/USDT:USDT ETH/USDT:USDT \
   --timeframes 5m \
   --days 10
@@ -30,7 +30,7 @@ docker compose exec freqtrade freqtrade download-data \
 
 ### 2. 运行回测
 ```bash
-docker compose exec freqtrade freqtrade backtesting \
+freqtrade backtesting \
   --config /freqtrade/user_data/config_backtest.json \
   --strategy SampleStrategy \
   --timerange 20250907-20250917 \
@@ -49,9 +49,9 @@ docker compose exec freqtrade freqtrade backtesting \
 | 停止服务 | `docker compose down` |
 | 查看状态 | `docker compose ps` |
 | 查看日志 | `docker compose logs -f freqtrade` |
-| 下载数据 | `docker compose exec freqtrade freqtrade download-data --pairs BTC/USDT:USDT --timeframes 5m --days 30` |
-| 运行回测 | `docker compose exec freqtrade freqtrade backtesting --strategy SampleStrategy --timerange 20240901-20240930` |
-| 查看策略 | `docker compose exec freqtrade freqtrade list-strategies` |
+| 下载数据 | `freqtrade download-data --pairs BTC/USDT:USDT --timeframes 5m --days 30` |
+| 运行回测 | `freqtrade backtesting --strategy SampleStrategy --timerange 20240901-20240930` |
+| 查看策略 | `freqtrade list-strategies` |
 
 ## ⚠️ 重要提醒
 

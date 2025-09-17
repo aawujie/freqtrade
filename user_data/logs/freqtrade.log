@@ -1135,3 +1135,51 @@
 2025-09-17 09:21:57,435 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2025.9-dev-f6e1442f', state='RUNNING'
 2025-09-17 09:22:33,729 - freqtrade.exchange.common - WARNING - fetch_l2_order_book() returned exception: "Could not get order book due to RequestTimeout. Message: binance GET https://fapi.binance.com/fapi/v1/depth?symbol=BTCUSDT&limit=5". Retrying still for 4 times.
 2025-09-17 09:25:23,712 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2025.9-dev-f6e1442f', state='RUNNING'
+2025-09-17 09:26:06,508 - freqtrade.exchange.common - WARNING - fetch_l2_order_book() returned exception: "Could not get order book due to RequestTimeout. Message: binance GET https://fapi.binance.com/fapi/v1/depth?symbol=XRPUSDT&limit=5". Retrying still for 4 times.
+2025-09-17 09:32:49,360 - freqtrade.wallets - INFO - Wallets synced.
+2025-09-17 09:32:49,366 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2025.9-dev-f6e1442f', state='RUNNING'
+2025-09-17 09:33:51,642 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2025.9-dev-f6e1442f', state='RUNNING'
+2025-09-17 09:34:51,673 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2025.9-dev-f6e1442f', state='RUNNING'
+2025-09-17 09:35:52,999 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2025.9-dev-f6e1442f', state='RUNNING'
+2025-09-17 09:36:53,045 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2025.9-dev-f6e1442f', state='RUNNING'
+2025-09-17 09:37:53,085 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2025.9-dev-f6e1442f', state='RUNNING'
+2025-09-17 09:38:53,138 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2025.9-dev-f6e1442f', state='RUNNING'
+2025-09-17 09:39:53,188 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2025.9-dev-f6e1442f', state='RUNNING'
+2025-09-17 09:40:12,846 - freqtrade.wallets - INFO - Wallets synced.
+2025-09-17 09:40:13,137 - freqtrade.freqtradebot - INFO - Long signal found: about create a new trade for SOMI/USDT:USDT with stake_amount: 100 and price: 1.253 ...
+2025-09-17 09:40:13,405 - freqtrade.freqtradebot - INFO - Order dry_run_buy_SOMI/USDT:USDT_1758102013.139174 was created for SOMI/USDT:USDT and status is open.
+2025-09-17 09:40:14,287 - freqtrade.wallets - INFO - Wallets synced.
+2025-09-17 09:40:14,287 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'trade_id': 14, 'type': entry, 'buy_tag': '', 'enter_tag': '', 'exchange': 'Binance', 'pair': 'SOMI/USDT:USDT', 'leverage': 1.0, 'direction': 'Long', 'limit': 1.253, 'order_rate': 1.253, 'open_rate': 1.253, 'order_type': 'limit', 'stake_amount': 100.0, 'stake_currency': 'USDT', 'base_currency': 'SOMI', 'quote_currency': 'USDT', 'fiat_currency': 'USD', 'amount': 79.0, 'open_date': datetime.datetime(2025, 9, 17, 9, 40, 13, 406877, tzinfo=datetime.timezone.utc), 'current_rate': 1.253, 'sub_trade': False}
+2025-09-17 09:40:17,460 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=14, pair=SOMI/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=1.25300000, open_since=2025-09-17 09:40:13)
+2025-09-17 09:40:17,464 - freqtrade.freqtradebot - INFO - Fee for Trade Trade(id=14, pair=SOMI/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=1.25300000, open_since=2025-09-17 09:40:13) [buy]: 0.0197974 USDT - rate: 0.0002
+2025-09-17 09:40:17,465 - freqtrade.persistence.trade_model - INFO - Updating trade (id=14) ...
+2025-09-17 09:40:17,465 - freqtrade.persistence.trade_model - INFO - LIMIT_BUY has been fulfilled for Trade(id=14, pair=SOMI/USDT:USDT, amount=79.00000000, is_short=False, leverage=1.0, open_rate=1.25300000, open_since=2025-09-17 09:40:13).
+2025-09-17 09:40:17,469 - freqtrade.wallets - INFO - Wallets synced.
+2025-09-17 09:40:17,470 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'trade_id': 14, 'type': entry_fill, 'buy_tag': '', 'enter_tag': '', 'exchange': 'Binance', 'pair': 'SOMI/USDT:USDT', 'leverage': 1.0, 'direction': 'Long', 'limit': 1.253, 'order_rate': 1.253, 'open_rate': 1.253, 'order_type': 'limit', 'stake_amount': 98.987, 'stake_currency': 'USDT', 'base_currency': 'SOMI', 'quote_currency': 'USDT', 'fiat_currency': 'USD', 'amount': 79.0, 'open_date': datetime.datetime(2025, 9, 17, 9, 40, 13, 406877, tzinfo=datetime.timezone.utc), 'current_rate': 1.253, 'sub_trade': False}
+2025-09-17 09:40:38,055 - uvicorn.error - INFO - 172.18.0.1:62968 - "WebSocket /api/v1/message/ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGl0eSI6eyJ1IjoiZnJlcXRyYWRlciJ9LCJleHAiOjE3NTgxMDI2MzcsImlhdCI6MTc1ODEwMTczNywidHlwZSI6ImFjY2VzcyJ9.CExVmvUTVdJRWVHB_8OCOJO5AvivifNfLDm-n3hhs68" [accepted]
+2025-09-17 09:40:38,057 - freqtrade.rpc.api_server.ws.channel - INFO - Connected to channel - WebSocketChannel(cc4c2e6b, ('172.18.0.1', 62968))
+2025-09-17 09:40:38,058 - uvicorn.error - INFO - connection open
+2025-09-17 09:40:54,317 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2025.9-dev-f6e1442f', state='RUNNING'
+2025-09-17 09:41:54,370 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2025.9-dev-f6e1442f', state='RUNNING'
+2025-09-17 09:42:05,233 - VolumePairList - INFO - Pair BNB/USDT:USDT in your blacklist. Removing it from whitelist...
+2025-09-17 09:42:05,253 - freqtrade.plugins.pairlistmanager - INFO - Whitelist with 20 pairs: ['ETH/USDT:USDT', 'BTC/USDT:USDT', 'SOL/USDT:USDT', 'DOGE/USDT:USDT', 'XRP/USDT:USDT', 'PUMP/USDT:USDT', 'MYX/USDT:USDT', 'SOMI/USDT:USDT', 'AVNT/USDT:USDT', 'TST/USDT:USDT', '1000PEPE/USDT:USDT', 'AVAX/USDT:USDT', 'SUI/USDT:USDT', 'ENA/USDT:USDT', 'Q/USDT:USDT', 'WLFI/USDT:USDT', 'ADA/USDT:USDT', 'MERL/USDT:USDT', 'WLD/USDT:USDT', 'HIFI/USDT:USDT']
+2025-09-17 09:42:54,416 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2025.9-dev-f6e1442f', state='RUNNING'
+2025-09-17 09:43:54,451 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2025.9-dev-f6e1442f', state='RUNNING'
+2025-09-17 09:44:54,492 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2025.9-dev-f6e1442f', state='RUNNING'
+2025-09-17 09:45:56,591 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2025.9-dev-f6e1442f', state='RUNNING'
+2025-09-17 09:46:56,623 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2025.9-dev-f6e1442f', state='RUNNING'
+2025-09-17 09:47:56,664 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2025.9-dev-f6e1442f', state='RUNNING'
+2025-09-17 09:48:56,715 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2025.9-dev-f6e1442f', state='RUNNING'
+2025-09-17 09:50:01,004 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2025.9-dev-f6e1442f', state='RUNNING'
+2025-09-17 09:50:08,913 - uvicorn.error - INFO - connection closed
+2025-09-17 09:50:08,926 - freqtrade.rpc.api_server.ws.channel - INFO - Disconnected from channel - WebSocketChannel(cc4c2e6b, ('172.18.0.1', 62968))
+2025-09-17 09:50:36,725 - uvicorn.error - INFO - 172.18.0.1:57220 - "WebSocket /api/v1/message/ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGl0eSI6eyJ1IjoiZnJlcXRyYWRlciJ9LCJleHAiOjE3NTgxMDI2MzcsImlhdCI6MTc1ODEwMTczNywidHlwZSI6ImFjY2VzcyJ9.CExVmvUTVdJRWVHB_8OCOJO5AvivifNfLDm-n3hhs68" [accepted]
+2025-09-17 09:50:36,728 - freqtrade.rpc.api_server.ws.channel - INFO - Connected to channel - WebSocketChannel(2c055f03, ('172.18.0.1', 57220))
+2025-09-17 09:50:36,731 - uvicorn.error - INFO - connection open
+2025-09-17 09:50:41,881 - freqtrade.exchange.common - WARNING - _async_get_candle_history() returned exception: "Could not fetch historical candle (OHLCV) data for WLD/USDT:USDT, 5m, futures due to RequestTimeout. Message: binance GET https://fapi.binance.com/fapi/v1/klines?interval=5m&limit=1500&symbol=WLDUSDT". Retrying still for 4 times.
+2025-09-17 09:51:04,242 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2025.9-dev-f6e1442f', state='RUNNING'
+2025-09-17 09:52:04,277 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2025.9-dev-f6e1442f', state='RUNNING'
+2025-09-17 09:53:04,318 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2025.9-dev-f6e1442f', state='RUNNING'
+2025-09-17 09:54:04,358 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2025.9-dev-f6e1442f', state='RUNNING'
+2025-09-17 09:55:04,401 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2025.9-dev-f6e1442f', state='RUNNING'
+2025-09-17 09:56:06,373 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2025.9-dev-f6e1442f', state='RUNNING'
