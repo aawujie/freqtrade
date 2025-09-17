@@ -1,0 +1,710 @@
+2025-09-17 04:02:51,298 - freqtrade.loggers - INFO - Enabling colorized output.
+2025-09-17 04:02:51,298 - freqtrade.loggers - INFO - Logfile configured
+2025-09-17 04:02:51,299 - freqtrade.loggers - INFO - Verbosity set to 0
+2025-09-17 04:02:51,299 - freqtrade.configuration.configuration - INFO - Runmode set to dry_run.
+2025-09-17 04:02:51,299 - freqtrade.configuration.configuration - INFO - Parameter --db-url detected ...
+2025-09-17 04:02:51,300 - freqtrade.configuration.configuration - INFO - Dry run is enabled
+2025-09-17 04:02:51,300 - freqtrade.configuration.configuration - INFO - Using DB: "sqlite:////freqtrade/user_data/tradesv3.sqlite"
+2025-09-17 04:02:51,301 - freqtrade.configuration.configuration - INFO - Using max_open_trades: -1 ...
+2025-09-17 04:02:51,315 - freqtrade.configuration.configuration - INFO - Using user-data directory: /freqtrade/user_data ...
+2025-09-17 04:02:51,316 - freqtrade.configuration.configuration - INFO - Using data directory: /freqtrade/user_data/data/binance ...
+2025-09-17 04:02:51,317 - freqtrade.exchange.check_exchange - INFO - Checking exchange...
+2025-09-17 04:02:51,326 - freqtrade.exchange.check_exchange - INFO - Exchange "binance" is officially supported by the Freqtrade development team.
+2025-09-17 04:02:51,326 - freqtrade.configuration.configuration - INFO - Using pairlist from configuration.
+2025-09-17 04:02:51,327 - freqtrade.exchange.exchange - INFO - Instance is running with dry_run enabled
+2025-09-17 04:02:51,327 - freqtrade.exchange.exchange - INFO - Using CCXT 4.5.2
+2025-09-17 04:02:51,328 - freqtrade.exchange.exchange - INFO - Applying additional ccxt config: {'options': {'defaultType': 'swap'}}
+2025-09-17 04:02:51,336 - freqtrade.exchange.exchange - INFO - Applying additional ccxt config: {'options': {'defaultType': 'swap'}}
+2025-09-17 04:02:51,345 - freqtrade.exchange.exchange - INFO - Using Exchange "Binance"
+2025-09-17 04:02:53,390 - freqtrade.resolvers.exchange_resolver - INFO - Using resolved exchange 'Binance'...
+2025-09-17 04:02:53,401 - freqtrade.resolvers.iresolver - INFO - Using resolved strategy SampleStrategy from '/freqtrade/user_data/strategies/sample_strategy.py'...
+2025-09-17 04:02:53,401 - freqtrade.strategy.hyper - INFO - Found no parameter file.
+2025-09-17 04:02:53,402 - freqtrade.resolvers.strategy_resolver - INFO - Override strategy 'stake_currency' with value in config file: USDT.
+2025-09-17 04:02:53,402 - freqtrade.resolvers.strategy_resolver - INFO - Override strategy 'stake_amount' with value in config file: 100.
+2025-09-17 04:02:53,402 - freqtrade.resolvers.strategy_resolver - INFO - Override strategy 'unfilledtimeout' with value in config file: {'entry': 10, 'exit': 10, 'exit_timeout_count': 0, 'unit': 'minutes'}.
+2025-09-17 04:02:53,403 - freqtrade.resolvers.strategy_resolver - INFO - Override strategy 'max_open_trades' with value in config file: inf.
+2025-09-17 04:02:53,403 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using minimal_roi: {'60': 0.01, '30': 0.02, '0': 0.04}
+2025-09-17 04:02:53,403 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using timeframe: 5m
+2025-09-17 04:02:53,404 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using stoploss: -0.1
+2025-09-17 04:02:53,404 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using trailing_stop: False
+2025-09-17 04:02:53,404 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using trailing_stop_positive_offset: 0.0
+2025-09-17 04:02:53,405 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using trailing_only_offset_is_reached: False
+2025-09-17 04:02:53,405 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using use_custom_stoploss: False
+2025-09-17 04:02:53,405 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using process_only_new_candles: True
+2025-09-17 04:02:53,406 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using order_types: {'entry': 'limit', 'exit': 'limit', 'stoploss': 'market', 'stoploss_on_exchange': False}
+2025-09-17 04:02:53,406 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using order_time_in_force: {'entry': 'GTC', 'exit': 'GTC'}
+2025-09-17 04:02:53,406 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using stake_currency: USDT
+2025-09-17 04:02:53,407 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using stake_amount: 100
+2025-09-17 04:02:53,407 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using startup_candle_count: 200
+2025-09-17 04:02:53,407 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using unfilledtimeout: {'entry': 10, 'exit': 10, 'exit_timeout_count': 0, 'unit': 'minutes'}
+2025-09-17 04:02:53,407 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using use_exit_signal: True
+2025-09-17 04:02:53,408 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using exit_profit_only: False
+2025-09-17 04:02:53,408 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using ignore_roi_if_entry_signal: False
+2025-09-17 04:02:53,408 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using exit_profit_offset: 0.0
+2025-09-17 04:02:53,409 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using disable_dataframe_checks: False
+2025-09-17 04:02:53,409 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using ignore_buying_expired_candle_after: 0
+2025-09-17 04:02:53,409 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using position_adjustment_enable: False
+2025-09-17 04:02:53,410 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using max_entry_position_adjustment: -1
+2025-09-17 04:02:53,410 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using max_open_trades: inf
+2025-09-17 04:02:53,410 - freqtrade.configuration.config_validation - INFO - Validating configuration ...
+2025-09-17 04:02:53,458 - freqtrade.wallets - INFO - Wallets synced.
+2025-09-17 04:02:54,444 - freqtrade.rpc.rpc_manager - INFO - Enabling rpc.api_server
+2025-09-17 04:02:54,567 - freqtrade.rpc.api_server.webserver - INFO - Starting HTTP Server at 0.0.0.0:8080
+2025-09-17 04:02:54,567 - freqtrade.rpc.api_server.webserver - INFO - Starting Local Rest Server.
+2025-09-17 04:02:54,579 - uvicorn.error - INFO - Started server process [1]
+2025-09-17 04:02:54,580 - uvicorn.error - INFO - Waiting for application startup.
+2025-09-17 04:02:54,580 - uvicorn.error - INFO - Application startup complete.
+2025-09-17 04:02:54,581 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
+2025-09-17 04:02:54,593 - freqtrade.resolvers.iresolver - INFO - Using resolved pairlist VolumePairList from '/freqtrade/freqtrade/plugins/pairlist/VolumePairList.py'...
+2025-09-17 04:02:54,594 - freqtrade.freqtradebot - INFO - Starting initial pairlist refresh
+2025-09-17 04:02:55,805 - VolumePairList - INFO - Pair BNB/USDT:USDT in your blacklist. Removing it from whitelist...
+2025-09-17 04:02:55,816 - freqtrade.plugins.pairlistmanager - INFO - Whitelist with 20 pairs: ['ETH/USDT:USDT', 'BTC/USDT:USDT', 'SOL/USDT:USDT', 'DOGE/USDT:USDT', 'XRP/USDT:USDT', 'AVNT/USDT:USDT', 'PUMP/USDT:USDT', 'SOMI/USDT:USDT', 'AVAX/USDT:USDT', 'MERL/USDT:USDT', 'SUI/USDT:USDT', '1000PEPE/USDT:USDT', 'TST/USDT:USDT', 'Q/USDT:USDT', 'WLFI/USDT:USDT', 'ENA/USDT:USDT', 'ZKC/USDT:USDT', 'HIFI/USDT:USDT', 'ADA/USDT:USDT', 'MYX/USDT:USDT']
+2025-09-17 04:02:55,817 - freqtrade.freqtradebot - INFO - Initial Pairlist refresh took 1.22s
+2025-09-17 04:02:55,818 - freqtrade.strategy.hyper - INFO - No params for buy found, using default values.
+2025-09-17 04:02:55,818 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): buy_rsi = 30
+2025-09-17 04:02:55,819 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): exit_short_rsi = 30
+2025-09-17 04:02:55,819 - freqtrade.strategy.hyper - INFO - No params for sell found, using default values.
+2025-09-17 04:02:55,819 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): sell_rsi = 70
+2025-09-17 04:02:55,820 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): short_rsi = 70
+2025-09-17 04:02:55,820 - freqtrade.strategy.hyper - INFO - No params for protection found, using default values.
+2025-09-17 04:02:55,820 - freqtrade.plugins.protectionmanager - INFO - No protection Handlers defined.
+2025-09-17 04:02:55,821 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': status, 'status': 'running'}
+2025-09-17 04:02:55,821 - freqtrade.worker - INFO - Changing state to: RUNNING
+2025-09-17 04:02:55,824 - freqtrade.util.migrations.binance_mig - INFO - Migrating binance futures pairs in database.
+2025-09-17 04:02:55,827 - freqtrade.util.migrations.binance_mig - INFO - Done migrating binance futures pairs in database.
+2025-09-17 04:02:55,835 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': warning, 'status': 'Dry run is enabled. All trades are simulated.'}
+2025-09-17 04:02:55,836 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': startup, 'status': "*Exchange:* `binance`\n*Stake per trade:* `100 USDT`\n*Minimum ROI:* `{'60': 0.01, '30': 0.02, '0': 0.04}`\n*Stoploss:* `-0.1`\n*Position adjustment:* `Off`\n*Timeframe:* `5m`\n*Strategy:* `SampleStrategy`"}
+2025-09-17 04:02:55,836 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': startup, 'status': "Searching for USDT pairs to buy and sell based on [{'VolumePairList': 'VolumePairList - top 20 volume pairs.'}]"}
+2025-09-17 04:03:05,975 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 04:04:06,011 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 04:05:19,087 - freqtrade.exchange.common - WARNING - _async_get_candle_history() returned exception: "Could not fetch historical candle (OHLCV) data for ENA/USDT:USDT, 5m, futures due to RequestTimeout. Message: binance GET https://fapi.binance.com/fapi/v1/klines?interval=5m&limit=1500&symbol=ENAUSDT". Retrying still for 4 times.
+2025-09-17 04:05:20,081 - freqtrade.exchange.common - WARNING - _async_get_candle_history() returned exception: "Could not fetch historical candle (OHLCV) data for SOMI/USDT:USDT, 5m, futures due to RequestTimeout. Message: binance GET https://fapi.binance.com/fapi/v1/klines?interval=5m&limit=1500&symbol=SOMIUSDT". Retrying still for 4 times.
+2025-09-17 04:05:21,153 - freqtrade.wallets - INFO - Wallets synced.
+2025-09-17 04:05:21,910 - freqtrade.wallets - INFO - Stake amount for pair BTC/USDT:USDT is too small (100 < 122.19249), adjusting to 122.19249.
+2025-09-17 04:05:21,912 - freqtrade.freqtradebot - INFO - Long signal found: about create a new trade for BTC/USDT:USDT with stake_amount: 122.19249 and price: 116373.8 ...
+2025-09-17 04:05:22,183 - freqtrade.freqtradebot - INFO - Order dry_run_buy_BTC/USDT:USDT_1758081921.915003 was created for BTC/USDT:USDT and status is open.
+2025-09-17 04:05:23,073 - freqtrade.wallets - INFO - Wallets synced.
+2025-09-17 04:05:23,073 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'trade_id': 1, 'type': entry, 'buy_tag': '', 'enter_tag': '', 'exchange': 'Binance', 'pair': 'BTC/USDT:USDT', 'leverage': 1.0, 'direction': 'Long', 'limit': 116373.8, 'order_rate': 116373.8, 'open_rate': 116373.8, 'order_type': 'limit', 'stake_amount': 122.19249, 'stake_currency': 'USDT', 'base_currency': 'BTC', 'quote_currency': 'USDT', 'fiat_currency': 'USD', 'amount': 0.001, 'open_date': datetime.datetime(2025, 9, 17, 4, 5, 22, 184763, tzinfo=datetime.timezone.utc), 'current_rate': 116373.8, 'sub_trade': False}
+2025-09-17 04:05:23,085 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 04:05:25,252 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=1, pair=BTC/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=116373.80000000, open_since=2025-09-17 04:05:22)
+2025-09-17 04:05:25,276 - freqtrade.wallets - INFO - Wallets synced.
+2025-09-17 04:05:25,527 - freqtrade.freqtradebot - INFO - Long signal found: about create a new trade for XRP/USDT:USDT with stake_amount: 100 and price: 3.0175 ...
+2025-09-17 04:05:25,780 - freqtrade.freqtradebot - INFO - Order dry_run_buy_XRP/USDT:USDT_1758081925.528089 was created for XRP/USDT:USDT and status is open.
+2025-09-17 04:05:26,616 - freqtrade.wallets - INFO - Wallets synced.
+2025-09-17 04:05:26,617 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'trade_id': 2, 'type': entry, 'buy_tag': '', 'enter_tag': '', 'exchange': 'Binance', 'pair': 'XRP/USDT:USDT', 'leverage': 1.0, 'direction': 'Long', 'limit': 3.0175, 'order_rate': 3.0175, 'open_rate': 3.0175, 'order_type': 'limit', 'stake_amount': 100.0, 'stake_currency': 'USDT', 'base_currency': 'XRP', 'quote_currency': 'USDT', 'fiat_currency': 'USD', 'amount': 33.1, 'open_date': datetime.datetime(2025, 9, 17, 4, 5, 25, 781809, tzinfo=datetime.timezone.utc), 'current_rate': 3.0175, 'sub_trade': False}
+2025-09-17 04:05:28,377 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=1, pair=BTC/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=116373.80000000, open_since=2025-09-17 04:05:22)
+2025-09-17 04:05:28,637 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=2, pair=XRP/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=3.01750000, open_since=2025-09-17 04:05:25)
+2025-09-17 04:05:33,517 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=1, pair=BTC/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=116373.80000000, open_since=2025-09-17 04:05:22)
+2025-09-17 04:05:33,875 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=2, pair=XRP/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=3.01750000, open_since=2025-09-17 04:05:25)
+2025-09-17 04:05:38,392 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=1, pair=BTC/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=116373.80000000, open_since=2025-09-17 04:05:22)
+2025-09-17 04:05:38,661 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=2, pair=XRP/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=3.01750000, open_since=2025-09-17 04:05:25)
+2025-09-17 04:05:38,668 - freqtrade.freqtradebot - INFO - Fee for Trade Trade(id=2, pair=XRP/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=3.01750000, open_since=2025-09-17 04:05:25) [buy]: 0.01997585 USDT - rate: 0.0002
+2025-09-17 04:05:38,669 - freqtrade.persistence.trade_model - INFO - Updating trade (id=2) ...
+2025-09-17 04:05:38,670 - freqtrade.persistence.trade_model - INFO - LIMIT_BUY has been fulfilled for Trade(id=2, pair=XRP/USDT:USDT, amount=33.10000000, is_short=False, leverage=1.0, open_rate=3.01750000, open_since=2025-09-17 04:05:25).
+2025-09-17 04:05:38,676 - freqtrade.wallets - INFO - Wallets synced.
+2025-09-17 04:05:38,679 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'trade_id': 2, 'type': entry_fill, 'buy_tag': '', 'enter_tag': '', 'exchange': 'Binance', 'pair': 'XRP/USDT:USDT', 'leverage': 1.0, 'direction': 'Long', 'limit': 3.0175, 'order_rate': 3.0175, 'open_rate': 3.0175, 'order_type': 'limit', 'stake_amount': 99.87925, 'stake_currency': 'USDT', 'base_currency': 'XRP', 'quote_currency': 'USDT', 'fiat_currency': 'USD', 'amount': 33.1, 'open_date': datetime.datetime(2025, 9, 17, 4, 5, 25, 781809, tzinfo=datetime.timezone.utc), 'current_rate': 3.0175, 'sub_trade': False}
+2025-09-17 04:11:10,248 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 04:11:16,956 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=1, pair=BTC/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=116373.80000000, open_since=2025-09-17 04:05:22)
+2025-09-17 04:11:17,845 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=1, pair=BTC/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=116373.80000000, open_since=2025-09-17 04:05:22)
+2025-09-17 04:11:22,828 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=1, pair=BTC/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=116373.80000000, open_since=2025-09-17 04:05:22)
+2025-09-17 04:11:32,395 - freqtrade.exchange.common - WARNING - fetch_l2_order_book() returned exception: "Could not get order book due to NetworkError. Message: binance GET https://fapi.binance.com/fapi/v1/depth?symbol=BTCUSDT&limit=5". Retrying still for 4 times.
+2025-09-17 04:11:33,201 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=1, pair=BTC/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=116373.80000000, open_since=2025-09-17 04:05:22)
+2025-09-17 04:11:33,207 - freqtrade.freqtradebot - INFO - Fee for Trade Trade(id=1, pair=BTC/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=116373.80000000, open_since=2025-09-17 04:05:22) [buy]: 0.02327476 USDT - rate: 0.0002
+2025-09-17 04:11:33,207 - freqtrade.persistence.trade_model - INFO - Updating trade (id=1) ...
+2025-09-17 04:11:33,208 - freqtrade.persistence.trade_model - INFO - LIMIT_BUY has been fulfilled for Trade(id=1, pair=BTC/USDT:USDT, amount=0.00100000, is_short=False, leverage=1.0, open_rate=116373.80000000, open_since=2025-09-17 04:05:22).
+2025-09-17 04:11:33,211 - freqtrade.wallets - INFO - Wallets synced.
+2025-09-17 04:11:33,212 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'trade_id': 1, 'type': entry_fill, 'buy_tag': '', 'enter_tag': '', 'exchange': 'Binance', 'pair': 'BTC/USDT:USDT', 'leverage': 1.0, 'direction': 'Long', 'limit': 116373.8, 'order_rate': 116373.8, 'open_rate': 116373.8, 'order_type': 'limit', 'stake_amount': 116.3738, 'stake_currency': 'USDT', 'base_currency': 'BTC', 'quote_currency': 'USDT', 'fiat_currency': 'USD', 'amount': 0.001, 'open_date': datetime.datetime(2025, 9, 17, 4, 5, 22, 184763, tzinfo=datetime.timezone.utc), 'current_rate': 116373.8, 'sub_trade': False}
+2025-09-17 04:26:46,268 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 04:26:57,319 - freqtrade.wallets - INFO - Wallets synced.
+2025-09-17 04:26:57,574 - freqtrade.freqtradebot - INFO - Long signal found: about create a new trade for SOL/USDT:USDT with stake_amount: 100 and price: 234.45 ...
+2025-09-17 04:26:57,836 - freqtrade.freqtradebot - INFO - Order dry_run_buy_SOL/USDT:USDT_1758083217.576598 was created for SOL/USDT:USDT and status is open.
+2025-09-17 04:26:58,671 - freqtrade.wallets - INFO - Wallets synced.
+2025-09-17 04:26:58,672 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'trade_id': 3, 'type': entry, 'buy_tag': '', 'enter_tag': '', 'exchange': 'Binance', 'pair': 'SOL/USDT:USDT', 'leverage': 1.0, 'direction': 'Long', 'limit': 234.45, 'order_rate': 234.45, 'open_rate': 234.45, 'order_type': 'limit', 'stake_amount': 100.0, 'stake_currency': 'USDT', 'base_currency': 'SOL', 'quote_currency': 'USDT', 'fiat_currency': 'USD', 'amount': 0.42, 'open_date': datetime.datetime(2025, 9, 17, 4, 26, 57, 838050, tzinfo=datetime.timezone.utc), 'current_rate': 234.45, 'sub_trade': False}
+2025-09-17 04:26:58,679 - freqtrade.wallets - INFO - Wallets synced.
+2025-09-17 04:26:58,944 - freqtrade.freqtradebot - INFO - Long signal found: about create a new trade for AVAX/USDT:USDT with stake_amount: 100 and price: 29.792 ...
+2025-09-17 04:26:59,257 - freqtrade.freqtradebot - INFO - Order dry_run_buy_AVAX/USDT:USDT_1758083218.9463 was created for AVAX/USDT:USDT and status is open.
+2025-09-17 04:27:00,536 - freqtrade.wallets - INFO - Wallets synced.
+2025-09-17 04:27:00,536 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'trade_id': 4, 'type': entry, 'buy_tag': '', 'enter_tag': '', 'exchange': 'Binance', 'pair': 'AVAX/USDT:USDT', 'leverage': 1.0, 'direction': 'Long', 'limit': 29.792, 'order_rate': 29.792, 'open_rate': 29.792, 'order_type': 'limit', 'stake_amount': 100.0, 'stake_currency': 'USDT', 'base_currency': 'AVAX', 'quote_currency': 'USDT', 'fiat_currency': 'USD', 'amount': 3.0, 'open_date': datetime.datetime(2025, 9, 17, 4, 26, 59, 259061, tzinfo=datetime.timezone.utc), 'current_rate': 29.792, 'sub_trade': False}
+2025-09-17 04:27:00,819 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=3, pair=SOL/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=234.45000000, open_since=2025-09-17 04:26:57)
+2025-09-17 04:27:01,171 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=4, pair=AVAX/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=29.79200000, open_since=2025-09-17 04:26:59)
+2025-09-17 04:27:05,833 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=3, pair=SOL/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=234.45000000, open_since=2025-09-17 04:26:57)
+2025-09-17 04:27:06,096 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=4, pair=AVAX/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=29.79200000, open_since=2025-09-17 04:26:59)
+2025-09-17 04:27:10,881 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=3, pair=SOL/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=234.45000000, open_since=2025-09-17 04:26:57)
+2025-09-17 04:27:11,166 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=4, pair=AVAX/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=29.79200000, open_since=2025-09-17 04:26:59)
+2025-09-17 04:27:25,647 - freqtrade.exchange.common - WARNING - fetch_l2_order_book() returned exception: "Could not get order book due to RequestTimeout. Message: binance GET https://fapi.binance.com/fapi/v1/depth?symbol=SOLUSDT&limit=5". Retrying still for 4 times.
+2025-09-17 04:27:26,445 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=3, pair=SOL/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=234.45000000, open_since=2025-09-17 04:26:57)
+2025-09-17 04:27:26,726 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=4, pair=AVAX/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=29.79200000, open_since=2025-09-17 04:26:59)
+2025-09-17 04:27:26,730 - freqtrade.freqtradebot - INFO - Fee for Trade Trade(id=4, pair=AVAX/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=29.79200000, open_since=2025-09-17 04:26:59) [buy]: 0.0178752 USDT - rate: 0.0002
+2025-09-17 04:27:26,731 - freqtrade.persistence.trade_model - INFO - Updating trade (id=4) ...
+2025-09-17 04:27:26,734 - freqtrade.persistence.trade_model - INFO - LIMIT_BUY has been fulfilled for Trade(id=4, pair=AVAX/USDT:USDT, amount=3.00000000, is_short=False, leverage=1.0, open_rate=29.79200000, open_since=2025-09-17 04:26:59).
+2025-09-17 04:27:26,741 - freqtrade.wallets - INFO - Wallets synced.
+2025-09-17 04:27:26,742 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'trade_id': 4, 'type': entry_fill, 'buy_tag': '', 'enter_tag': '', 'exchange': 'Binance', 'pair': 'AVAX/USDT:USDT', 'leverage': 1.0, 'direction': 'Long', 'limit': 29.792, 'order_rate': 29.792, 'open_rate': 29.792, 'order_type': 'limit', 'stake_amount': 89.376, 'stake_currency': 'USDT', 'base_currency': 'AVAX', 'quote_currency': 'USDT', 'fiat_currency': 'USD', 'amount': 3.0, 'open_date': datetime.datetime(2025, 9, 17, 4, 26, 59, 259061, tzinfo=datetime.timezone.utc), 'current_rate': 29.792, 'sub_trade': False}
+2025-09-17 04:27:27,855 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=3, pair=SOL/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=234.45000000, open_since=2025-09-17 04:26:57)
+2025-09-17 04:27:32,837 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=3, pair=SOL/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=234.45000000, open_since=2025-09-17 04:26:57)
+2025-09-17 04:27:37,865 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=3, pair=SOL/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=234.45000000, open_since=2025-09-17 04:26:57)
+2025-09-17 04:36:08,881 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 04:36:19,320 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=3, pair=SOL/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=234.45000000, open_since=2025-09-17 04:26:57)
+2025-09-17 04:36:24,238 - freqtrade.wallets - INFO - Wallets synced.
+2025-09-17 04:36:24,517 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=3, pair=SOL/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=234.45000000, open_since=2025-09-17 04:26:57)
+2025-09-17 04:36:24,524 - freqtrade.freqtradebot - INFO - Fee for Trade Trade(id=3, pair=SOL/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=234.45000000, open_since=2025-09-17 04:26:57) [buy]: 0.0196938 USDT - rate: 0.0002
+2025-09-17 04:36:24,525 - freqtrade.persistence.trade_model - INFO - Updating trade (id=3) ...
+2025-09-17 04:36:24,526 - freqtrade.persistence.trade_model - INFO - LIMIT_BUY has been fulfilled for Trade(id=3, pair=SOL/USDT:USDT, amount=0.42000000, is_short=False, leverage=1.0, open_rate=234.45000000, open_since=2025-09-17 04:26:57).
+2025-09-17 04:36:24,534 - freqtrade.wallets - INFO - Wallets synced.
+2025-09-17 04:36:24,537 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'trade_id': 3, 'type': entry_fill, 'buy_tag': '', 'enter_tag': '', 'exchange': 'Binance', 'pair': 'SOL/USDT:USDT', 'leverage': 1.0, 'direction': 'Long', 'limit': 234.45, 'order_rate': 234.45, 'open_rate': 234.45, 'order_type': 'limit', 'stake_amount': 98.469, 'stake_currency': 'USDT', 'base_currency': 'SOL', 'quote_currency': 'USDT', 'fiat_currency': 'USD', 'amount': 0.42, 'open_date': datetime.datetime(2025, 9, 17, 4, 26, 57, 838050, tzinfo=datetime.timezone.utc), 'current_rate': 234.46, 'sub_trade': False}
+2025-09-17 04:37:09,276 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 04:38:09,339 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 04:39:09,403 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 04:40:15,586 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 04:41:15,625 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 04:42:15,679 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 04:43:15,746 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 04:44:15,822 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 04:45:18,183 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 04:46:18,249 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 04:47:18,307 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 04:48:18,381 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 04:49:18,455 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 04:50:20,264 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 04:51:20,330 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 04:52:20,392 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 04:53:20,445 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 04:54:20,494 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 04:55:22,786 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 04:56:22,838 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 04:57:22,889 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 04:58:22,941 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 04:59:22,995 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:00:13,261 - freqtrade.wallets - INFO - Wallets synced.
+2025-09-17 05:00:13,629 - freqtrade.freqtradebot - INFO - Long signal found: about create a new trade for DOGE/USDT:USDT with stake_amount: 100 and price: 0.26487 ...
+2025-09-17 05:00:14,021 - freqtrade.freqtradebot - INFO - Order dry_run_buy_DOGE/USDT:USDT_1758085213.630677 was created for DOGE/USDT:USDT and status is open.
+2025-09-17 05:00:15,009 - freqtrade.wallets - INFO - Wallets synced.
+2025-09-17 05:00:15,009 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'trade_id': 5, 'type': entry, 'buy_tag': '', 'enter_tag': '', 'exchange': 'Binance', 'pair': 'DOGE/USDT:USDT', 'leverage': 1.0, 'direction': 'Long', 'limit': 0.26487, 'order_rate': 0.26487, 'open_rate': 0.26487, 'order_type': 'limit', 'stake_amount': 100.0, 'stake_currency': 'USDT', 'base_currency': 'DOGE', 'quote_currency': 'USDT', 'fiat_currency': 'USD', 'amount': 377.0, 'open_date': datetime.datetime(2025, 9, 17, 5, 0, 14, 24329, tzinfo=datetime.timezone.utc), 'current_rate': 0.26487, 'sub_trade': False}
+2025-09-17 05:00:15,022 - freqtrade.wallets - INFO - Wallets synced.
+2025-09-17 05:00:15,371 - freqtrade.freqtradebot - INFO - Long signal found: about create a new trade for ADA/USDT:USDT with stake_amount: 100 and price: 0.8691 ...
+2025-09-17 05:00:15,752 - freqtrade.freqtradebot - INFO - Order dry_run_buy_ADA/USDT:USDT_1758085215.373239 was created for ADA/USDT:USDT and status is open.
+2025-09-17 05:00:16,618 - freqtrade.wallets - INFO - Wallets synced.
+2025-09-17 05:00:16,619 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'trade_id': 6, 'type': entry, 'buy_tag': '', 'enter_tag': '', 'exchange': 'Binance', 'pair': 'ADA/USDT:USDT', 'leverage': 1.0, 'direction': 'Long', 'limit': 0.8691, 'order_rate': 0.8691, 'open_rate': 0.8691, 'order_type': 'limit', 'stake_amount': 100.0, 'stake_currency': 'USDT', 'base_currency': 'ADA', 'quote_currency': 'USDT', 'fiat_currency': 'USD', 'amount': 115.0, 'open_date': datetime.datetime(2025, 9, 17, 5, 0, 15, 754713, tzinfo=datetime.timezone.utc), 'current_rate': 0.8691, 'sub_trade': False}
+2025-09-17 05:00:19,543 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:00:19,868 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:00:22,031 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:00:22,460 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:00:26,627 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:00:27,036 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:00:27,393 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:00:32,007 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:00:32,359 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:00:37,051 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:00:37,425 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:00:42,016 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:00:42,368 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:00:47,085 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:00:47,456 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:00:52,031 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:00:52,397 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:00:57,045 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:00:57,425 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:01:02,198 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:01:02,594 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:01:09,727 - freqtrade.wallets - INFO - Wallets synced.
+2025-09-17 05:01:10,134 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:01:10,539 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:01:15,106 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:01:15,490 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:01:20,135 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:01:20,563 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:01:25,134 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:01:25,504 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:01:29,737 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:01:30,295 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:01:30,708 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:01:35,021 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:01:35,279 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:01:40,100 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:01:40,388 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:01:45,041 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:01:45,317 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:01:50,026 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:01:50,306 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:01:55,027 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:01:55,284 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:02:00,622 - freqtrade.plugins.pairlistmanager - INFO - Whitelist with 20 pairs: ['ETH/USDT:USDT', 'BTC/USDT:USDT', 'SOL/USDT:USDT', 'DOGE/USDT:USDT', 'XRP/USDT:USDT', 'AVNT/USDT:USDT', 'PUMP/USDT:USDT', 'SOMI/USDT:USDT', 'AVAX/USDT:USDT', 'MERL/USDT:USDT', 'SUI/USDT:USDT', 'TST/USDT:USDT', '1000PEPE/USDT:USDT', 'Q/USDT:USDT', 'ENA/USDT:USDT', 'WLFI/USDT:USDT', 'MYX/USDT:USDT', 'ZKC/USDT:USDT', 'HIFI/USDT:USDT', 'ADA/USDT:USDT']
+2025-09-17 05:02:00,884 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:02:01,139 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:02:05,029 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:02:05,287 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:02:10,040 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:02:10,303 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:02:15,049 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:02:15,314 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:02:20,034 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:02:20,299 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:02:25,037 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:02:25,302 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:02:29,760 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:02:30,126 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:02:30,406 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:02:35,038 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:02:35,293 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:02:40,057 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:02:40,319 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:02:45,112 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:02:45,404 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:02:50,045 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:02:50,317 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:02:57,444 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:02:57,789 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:03:00,152 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:03:00,452 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:03:05,048 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:03:05,309 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:03:10,071 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:03:10,333 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:03:15,081 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:03:15,355 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:03:20,081 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:03:20,348 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:03:25,069 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:03:25,396 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:03:29,798 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:03:30,085 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:03:30,367 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:03:35,088 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:03:35,343 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:03:40,101 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:03:40,358 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:03:45,228 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:03:45,487 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:03:50,093 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:03:50,345 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:03:55,103 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:03:55,367 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:04:00,091 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:04:00,364 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:04:05,087 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:04:05,344 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:04:10,107 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:04:10,364 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:04:15,223 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:04:15,485 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:04:20,223 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:04:20,483 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:04:25,113 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:04:25,385 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:04:29,830 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:04:30,161 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:04:30,421 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:04:35,129 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:04:35,394 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:04:40,121 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:04:40,377 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:04:45,129 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:04:45,392 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:04:50,142 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:04:50,412 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:04:55,123 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:04:55,389 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:05:00,141 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:05:00,407 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:05:15,224 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:05:15,762 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:05:17,093 - freqtrade.wallets - INFO - Wallets synced.
+2025-09-17 05:05:17,368 - freqtrade.freqtradebot - INFO - Long signal found: about create a new trade for ETH/USDT:USDT with stake_amount: 100 and price: 4479.59 ...
+2025-09-17 05:05:17,620 - freqtrade.freqtradebot - INFO - Order dry_run_buy_ETH/USDT:USDT_1758085517.36997 was created for ETH/USDT:USDT and status is open.
+2025-09-17 05:05:18,923 - freqtrade.wallets - INFO - Wallets synced.
+2025-09-17 05:05:18,924 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'trade_id': 7, 'type': entry, 'buy_tag': '', 'enter_tag': '', 'exchange': 'Binance', 'pair': 'ETH/USDT:USDT', 'leverage': 1.0, 'direction': 'Long', 'limit': 4479.59, 'order_rate': 4479.59, 'open_rate': 4479.59, 'order_type': 'limit', 'stake_amount': 100.0, 'stake_currency': 'USDT', 'base_currency': 'ETH', 'quote_currency': 'USDT', 'fiat_currency': 'USD', 'amount': 0.022, 'open_date': datetime.datetime(2025, 9, 17, 5, 5, 17, 622314, tzinfo=datetime.timezone.utc), 'current_rate': 4479.59, 'sub_trade': False}
+2025-09-17 05:05:18,928 - freqtrade.wallets - INFO - Wallets synced.
+2025-09-17 05:05:19,181 - freqtrade.freqtradebot - INFO - Long signal found: about create a new trade for PUMP/USDT:USDT with stake_amount: 100 and price: 0.007831 ...
+2025-09-17 05:05:19,435 - freqtrade.freqtradebot - INFO - Order dry_run_buy_PUMP/USDT:USDT_1758085519.183631 was created for PUMP/USDT:USDT and status is open.
+2025-09-17 05:05:19,855 - freqtrade.wallets - INFO - Wallets synced.
+2025-09-17 05:05:19,856 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'trade_id': 8, 'type': entry, 'buy_tag': '', 'enter_tag': '', 'exchange': 'Binance', 'pair': 'PUMP/USDT:USDT', 'leverage': 1.0, 'direction': 'Long', 'limit': 0.007831, 'order_rate': 0.007831, 'open_rate': 0.007831, 'order_type': 'limit', 'stake_amount': 100.0, 'stake_currency': 'USDT', 'base_currency': 'PUMP', 'quote_currency': 'USDT', 'fiat_currency': 'USD', 'amount': 12769.0, 'open_date': datetime.datetime(2025, 9, 17, 5, 5, 19, 437468, tzinfo=datetime.timezone.utc), 'current_rate': 0.007831, 'sub_trade': False}
+2025-09-17 05:05:19,862 - freqtrade.wallets - INFO - Wallets synced.
+2025-09-17 05:05:20,116 - freqtrade.freqtradebot - INFO - Long signal found: about create a new trade for 1000PEPE/USDT:USDT with stake_amount: 100 and price: 0.010901 ...
+2025-09-17 05:05:20,424 - freqtrade.freqtradebot - INFO - Order dry_run_buy_1000PEPE/USDT:USDT_1758085520.118614 was created for 1000PEPE/USDT:USDT and status is open.
+2025-09-17 05:05:21,267 - freqtrade.wallets - INFO - Wallets synced.
+2025-09-17 05:05:21,268 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'trade_id': 9, 'type': entry, 'buy_tag': '', 'enter_tag': '', 'exchange': 'Binance', 'pair': '1000PEPE/USDT:USDT', 'leverage': 1.0, 'direction': 'Long', 'limit': 0.010901, 'order_rate': 0.010901, 'open_rate': 0.010901, 'order_type': 'limit', 'stake_amount': 100.0, 'stake_currency': 'USDT', 'base_currency': '1000PEPE', 'quote_currency': 'USDT', 'fiat_currency': 'USD', 'amount': 9173.0, 'open_date': datetime.datetime(2025, 9, 17, 5, 5, 20, 425929, tzinfo=datetime.timezone.utc), 'current_rate': 0.010901, 'sub_trade': False}
+2025-09-17 05:05:21,551 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:05:22,094 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:05:22,616 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=7, pair=ETH/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=4479.59000000, open_since=2025-09-17 05:05:17)
+2025-09-17 05:05:22,623 - freqtrade.freqtradebot - INFO - Fee for Trade Trade(id=7, pair=ETH/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=4479.59000000, open_since=2025-09-17 05:05:17) [buy]: 0.019710196 USDT - rate: 0.0002
+2025-09-17 05:05:22,624 - freqtrade.persistence.trade_model - INFO - Updating trade (id=7) ...
+2025-09-17 05:05:22,625 - freqtrade.persistence.trade_model - INFO - LIMIT_BUY has been fulfilled for Trade(id=7, pair=ETH/USDT:USDT, amount=0.02200000, is_short=False, leverage=1.0, open_rate=4479.59000000, open_since=2025-09-17 05:05:17).
+2025-09-17 05:05:22,633 - freqtrade.wallets - INFO - Wallets synced.
+2025-09-17 05:05:22,636 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'trade_id': 7, 'type': entry_fill, 'buy_tag': '', 'enter_tag': '', 'exchange': 'Binance', 'pair': 'ETH/USDT:USDT', 'leverage': 1.0, 'direction': 'Long', 'limit': 4479.59, 'order_rate': 4479.59, 'open_rate': 4479.59, 'order_type': 'limit', 'stake_amount': 98.55098, 'stake_currency': 'USDT', 'base_currency': 'ETH', 'quote_currency': 'USDT', 'fiat_currency': 'USD', 'amount': 0.022, 'open_date': datetime.datetime(2025, 9, 17, 5, 5, 17, 622314, tzinfo=datetime.timezone.utc), 'current_rate': 4479.59, 'sub_trade': False}
+2025-09-17 05:05:22,916 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=8, pair=PUMP/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.00783100, open_since=2025-09-17 05:05:19)
+2025-09-17 05:05:23,207 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:05:26,581 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:05:27,111 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:05:27,629 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=8, pair=PUMP/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.00783100, open_since=2025-09-17 05:05:19)
+2025-09-17 05:05:27,916 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:05:31,284 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:05:31,587 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:05:32,182 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:05:32,735 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=8, pair=PUMP/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.00783100, open_since=2025-09-17 05:05:19)
+2025-09-17 05:05:32,995 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:05:36,584 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:05:37,110 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:05:37,626 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=8, pair=PUMP/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.00783100, open_since=2025-09-17 05:05:19)
+2025-09-17 05:05:37,892 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:05:41,583 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:05:42,153 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:05:42,689 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=8, pair=PUMP/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.00783100, open_since=2025-09-17 05:05:19)
+2025-09-17 05:05:42,955 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:05:46,596 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:05:47,191 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:05:47,706 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=8, pair=PUMP/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.00783100, open_since=2025-09-17 05:05:19)
+2025-09-17 05:05:47,961 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:05:51,618 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:05:52,136 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:05:52,659 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=8, pair=PUMP/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.00783100, open_since=2025-09-17 05:05:19)
+2025-09-17 05:05:52,917 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:05:56,584 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:05:57,112 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:05:57,625 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=8, pair=PUMP/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.00783100, open_since=2025-09-17 05:05:19)
+2025-09-17 05:05:57,889 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:06:01,595 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:06:02,099 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:06:02,631 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=8, pair=PUMP/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.00783100, open_since=2025-09-17 05:05:19)
+2025-09-17 05:06:02,901 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:06:06,594 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:06:07,117 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:06:07,644 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=8, pair=PUMP/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.00783100, open_since=2025-09-17 05:05:19)
+2025-09-17 05:06:07,922 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:06:11,598 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:06:12,117 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:06:12,631 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=8, pair=PUMP/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.00783100, open_since=2025-09-17 05:05:19)
+2025-09-17 05:06:12,888 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:06:16,619 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:06:17,153 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:06:17,667 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=8, pair=PUMP/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.00783100, open_since=2025-09-17 05:05:19)
+2025-09-17 05:06:17,674 - freqtrade.freqtradebot - INFO - Fee for Trade Trade(id=8, pair=PUMP/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.00783100, open_since=2025-09-17 05:05:19) [buy]: 0.019998808 USDT - rate: 0.0002
+2025-09-17 05:06:17,674 - freqtrade.persistence.trade_model - INFO - Updating trade (id=8) ...
+2025-09-17 05:06:17,675 - freqtrade.persistence.trade_model - INFO - LIMIT_BUY has been fulfilled for Trade(id=8, pair=PUMP/USDT:USDT, amount=12769.00000000, is_short=False, leverage=1.0, open_rate=0.00783100, open_since=2025-09-17 05:05:19).
+2025-09-17 05:06:17,680 - freqtrade.wallets - INFO - Wallets synced.
+2025-09-17 05:06:17,682 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'trade_id': 8, 'type': entry_fill, 'buy_tag': '', 'enter_tag': '', 'exchange': 'Binance', 'pair': 'PUMP/USDT:USDT', 'leverage': 1.0, 'direction': 'Long', 'limit': 0.007831, 'order_rate': 0.007831, 'open_rate': 0.007831, 'order_type': 'limit', 'stake_amount': 99.994039, 'stake_currency': 'USDT', 'base_currency': 'PUMP', 'quote_currency': 'USDT', 'fiat_currency': 'USD', 'amount': 12769.0, 'open_date': datetime.datetime(2025, 9, 17, 5, 5, 19, 437468, tzinfo=datetime.timezone.utc), 'current_rate': 0.007831, 'sub_trade': False}
+2025-09-17 05:06:17,942 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:06:21,597 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:06:22,107 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:06:22,621 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:06:26,634 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:06:27,223 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:06:27,746 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:06:31,324 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:06:31,726 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:06:32,401 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:06:33,167 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:06:36,732 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:06:37,547 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:06:38,278 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:06:41,748 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:06:42,463 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:06:43,137 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:06:46,728 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:06:47,483 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:06:48,231 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:06:51,776 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:06:52,545 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:06:53,309 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:06:56,753 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:06:57,525 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:06:58,278 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:07:01,750 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:07:02,532 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:07:03,326 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:07:06,733 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:07:07,512 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:07:08,268 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:07:11,782 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:07:12,544 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:07:13,244 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:07:16,765 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:07:17,555 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:07:18,320 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:07:21,753 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:07:22,572 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:07:23,370 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:07:26,758 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:07:27,538 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:07:28,334 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:07:31,361 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:07:31,802 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:07:32,583 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:07:33,386 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:07:36,778 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:07:37,593 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:07:38,398 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:07:41,808 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:07:42,577 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:07:43,371 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:07:46,767 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:07:47,521 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:07:48,302 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:07:51,767 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:07:52,539 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:07:53,291 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:07:56,786 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:07:57,567 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:07:58,363 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:08:01,812 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:08:02,563 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:08:03,331 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:08:06,824 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:08:07,536 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:08:08,262 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:08:11,772 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:08:12,602 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:08:13,448 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:08:16,784 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:08:17,585 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:08:18,362 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:08:21,773 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:08:22,559 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:08:23,298 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:08:26,784 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:08:27,580 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:08:28,278 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:08:31,401 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:08:31,823 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:08:32,550 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:08:33,317 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:08:36,817 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:08:37,589 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:08:38,352 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:08:41,820 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:08:42,612 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:08:43,341 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:08:46,816 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:08:47,612 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:08:48,396 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:08:51,823 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:08:52,548 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:08:53,288 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:08:56,848 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:08:57,611 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:08:58,371 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:09:01,817 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:09:02,599 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:09:03,541 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:09:06,838 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:09:07,658 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:09:08,431 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:09:11,892 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:09:12,728 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:09:13,484 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:09:16,854 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:09:17,618 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:09:18,512 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:09:21,850 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:09:22,620 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:09:23,376 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:09:26,855 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:09:27,638 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:09:28,415 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:09:31,441 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:09:31,891 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:09:32,648 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:09:33,390 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:09:36,864 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:09:37,635 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:09:38,353 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:09:41,864 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:09:42,805 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:09:43,567 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:09:46,840 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:09:47,587 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:09:48,277 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:09:51,864 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:09:52,663 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:09:53,457 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:09:56,885 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:09:57,659 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:09:58,452 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:10:12,430 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:10:13,208 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:10:13,930 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:10:18,388 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14)
+2025-09-17 05:10:19,143 - freqtrade.freqtradebot - INFO - Buy order cancelled due to timeout for Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14).
+2025-09-17 05:10:19,144 - freqtrade.freqtradebot - INFO - Buy order fully cancelled. Removing Trade(id=5, pair=DOGE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.26487000, open_since=2025-09-17 05:00:14) from database.
+2025-09-17 05:10:19,168 - freqtrade.wallets - INFO - Wallets synced.
+2025-09-17 05:10:19,168 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'trade_id': 5, 'type': entry_cancel, 'buy_tag': '', 'enter_tag': '', 'exchange': 'Binance', 'pair': 'DOGE/USDT:USDT', 'leverage': 1.0, 'direction': 'Long', 'limit': 0.26487, 'order_rate': 0.26487, 'order_type': 'limit', 'stake_amount': 100.0, 'open_rate': 0.26487, 'stake_currency': 'USDT', 'base_currency': 'DOGE', 'quote_currency': 'USDT', 'fiat_currency': 'USD', 'amount': 0.0, 'open_date': datetime.datetime(2025, 9, 17, 5, 0, 14, 24329), 'current_rate': 0.26581, 'reason': 'cancelled due to timeout, fully cancelled', 'sub_trade': False}
+2025-09-17 05:10:19,530 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15)
+2025-09-17 05:10:20,290 - freqtrade.freqtradebot - INFO - Buy order cancelled due to timeout for Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15).
+2025-09-17 05:10:20,292 - freqtrade.freqtradebot - INFO - Buy order fully cancelled. Removing Trade(id=6, pair=ADA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.86910000, open_since=2025-09-17 05:00:15) from database.
+2025-09-17 05:10:20,304 - freqtrade.wallets - INFO - Wallets synced.
+2025-09-17 05:10:20,305 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'trade_id': 6, 'type': entry_cancel, 'buy_tag': '', 'enter_tag': '', 'exchange': 'Binance', 'pair': 'ADA/USDT:USDT', 'leverage': 1.0, 'direction': 'Long', 'limit': 0.8691, 'order_rate': 0.8691, 'order_type': 'limit', 'stake_amount': 100.0, 'open_rate': 0.8691, 'stake_currency': 'USDT', 'base_currency': 'ADA', 'quote_currency': 'USDT', 'fiat_currency': 'USD', 'amount': 0.0, 'open_date': datetime.datetime(2025, 9, 17, 5, 0, 15, 754713), 'current_rate': 0.8721, 'reason': 'cancelled due to timeout, fully cancelled', 'sub_trade': False}
+2025-09-17 05:10:20,692 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:10:23,881 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:10:28,935 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:10:33,475 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:10:33,895 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:10:38,875 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:10:43,867 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:10:48,879 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:10:53,900 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:10:58,864 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:11:03,934 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:11:09,117 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:11:13,919 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:11:18,857 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:11:23,886 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:11:28,898 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:11:33,506 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:11:33,868 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:11:38,798 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:11:43,795 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:11:48,832 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:11:53,812 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:11:58,803 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:12:03,808 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:12:08,811 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:12:13,821 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:12:18,824 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:12:23,817 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:12:28,815 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:12:33,541 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:12:33,830 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:12:38,833 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:12:43,837 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:12:48,846 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:12:53,864 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:12:58,834 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:13:03,843 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:13:08,840 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:13:13,856 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:13:18,843 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:13:23,868 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:13:28,868 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:13:33,577 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:13:33,869 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:13:38,872 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:13:43,876 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:13:48,872 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:13:53,872 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:13:58,875 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:14:04,061 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:14:08,883 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:14:13,891 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:14:18,899 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:14:23,895 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:14:28,900 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:14:33,618 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:14:33,903 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:14:38,909 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:14:43,915 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:14:48,937 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:14:54,000 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:14:58,921 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:15:14,554 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:15:16,370 - freqtrade.wallets - INFO - Wallets synced.
+2025-09-17 05:15:16,625 - freqtrade.freqtradebot - INFO - Long signal found: about create a new trade for ENA/USDT:USDT with stake_amount: 100 and price: 0.6762 ...
+2025-09-17 05:15:16,890 - freqtrade.freqtradebot - INFO - Order dry_run_buy_ENA/USDT:USDT_1758086116.627903 was created for ENA/USDT:USDT and status is open.
+2025-09-17 05:15:17,714 - freqtrade.wallets - INFO - Wallets synced.
+2025-09-17 05:15:17,714 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'trade_id': 10, 'type': entry, 'buy_tag': '', 'enter_tag': '', 'exchange': 'Binance', 'pair': 'ENA/USDT:USDT', 'leverage': 1.0, 'direction': 'Long', 'limit': 0.6762, 'order_rate': 0.6762, 'open_rate': 0.6762, 'order_type': 'limit', 'stake_amount': 100.0, 'stake_currency': 'USDT', 'base_currency': 'ENA', 'quote_currency': 'USDT', 'fiat_currency': 'USD', 'amount': 147.0, 'open_date': datetime.datetime(2025, 9, 17, 5, 15, 16, 891614, tzinfo=datetime.timezone.utc), 'current_rate': 0.6762, 'sub_trade': False}
+2025-09-17 05:15:17,990 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:15:18,547 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=10, pair=ENA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.67620000, open_since=2025-09-17 05:15:16)
+2025-09-17 05:15:23,003 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20)
+2025-09-17 05:15:23,519 - freqtrade.freqtradebot - INFO - Buy order cancelled due to timeout for Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20).
+2025-09-17 05:15:23,521 - freqtrade.freqtradebot - INFO - Buy order fully cancelled. Removing Trade(id=9, pair=1000PEPE/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.01090100, open_since=2025-09-17 05:05:20) from database.
+2025-09-17 05:15:23,531 - freqtrade.wallets - INFO - Wallets synced.
+2025-09-17 05:15:23,532 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'trade_id': 9, 'type': entry_cancel, 'buy_tag': '', 'enter_tag': '', 'exchange': 'Binance', 'pair': '1000PEPE/USDT:USDT', 'leverage': 1.0, 'direction': 'Long', 'limit': 0.010901, 'order_rate': 0.010901, 'order_type': 'limit', 'stake_amount': 100.0, 'open_rate': 0.010901, 'stake_currency': 'USDT', 'base_currency': '1000PEPE', 'quote_currency': 'USDT', 'fiat_currency': 'USD', 'amount': 0.0, 'open_date': datetime.datetime(2025, 9, 17, 5, 5, 20, 425929), 'current_rate': 0.0109315, 'reason': 'cancelled due to timeout, fully cancelled', 'sub_trade': False}
+2025-09-17 05:15:23,781 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=10, pair=ENA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.67620000, open_since=2025-09-17 05:15:16)
+2025-09-17 05:15:27,999 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=10, pair=ENA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.67620000, open_since=2025-09-17 05:15:16)
+2025-09-17 05:15:33,074 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=10, pair=ENA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.67620000, open_since=2025-09-17 05:15:16)
+2025-09-17 05:15:37,726 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:15:38,040 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=10, pair=ENA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.67620000, open_since=2025-09-17 05:15:16)
+2025-09-17 05:15:43,037 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=10, pair=ENA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.67620000, open_since=2025-09-17 05:15:16)
+2025-09-17 05:15:48,011 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=10, pair=ENA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.67620000, open_since=2025-09-17 05:15:16)
+2025-09-17 05:15:53,016 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=10, pair=ENA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.67620000, open_since=2025-09-17 05:15:16)
+2025-09-17 05:15:58,019 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=10, pair=ENA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.67620000, open_since=2025-09-17 05:15:16)
+2025-09-17 05:16:03,024 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=10, pair=ENA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.67620000, open_since=2025-09-17 05:15:16)
+2025-09-17 05:16:08,022 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=10, pair=ENA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.67620000, open_since=2025-09-17 05:15:16)
+2025-09-17 05:16:13,102 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=10, pair=ENA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.67620000, open_since=2025-09-17 05:15:16)
+2025-09-17 05:16:18,046 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=10, pair=ENA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.67620000, open_since=2025-09-17 05:15:16)
+2025-09-17 05:16:23,039 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=10, pair=ENA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.67620000, open_since=2025-09-17 05:15:16)
+2025-09-17 05:16:28,041 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=10, pair=ENA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.67620000, open_since=2025-09-17 05:15:16)
+2025-09-17 05:16:33,177 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=10, pair=ENA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.67620000, open_since=2025-09-17 05:15:16)
+2025-09-17 05:16:37,760 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:16:38,175 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=10, pair=ENA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.67620000, open_since=2025-09-17 05:15:16)
+2025-09-17 05:16:43,151 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=10, pair=ENA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.67620000, open_since=2025-09-17 05:15:16)
+2025-09-17 05:16:48,183 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=10, pair=ENA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.67620000, open_since=2025-09-17 05:15:16)
+2025-09-17 05:16:53,188 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=10, pair=ENA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.67620000, open_since=2025-09-17 05:15:16)
+2025-09-17 05:16:58,193 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=10, pair=ENA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.67620000, open_since=2025-09-17 05:15:16)
+2025-09-17 05:17:03,181 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=10, pair=ENA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.67620000, open_since=2025-09-17 05:15:16)
+2025-09-17 05:17:08,164 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=10, pair=ENA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.67620000, open_since=2025-09-17 05:15:16)
+2025-09-17 05:17:13,156 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=10, pair=ENA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.67620000, open_since=2025-09-17 05:15:16)
+2025-09-17 05:17:18,179 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=10, pair=ENA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.67620000, open_since=2025-09-17 05:15:16)
+2025-09-17 05:17:23,208 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=10, pair=ENA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.67620000, open_since=2025-09-17 05:15:16)
+2025-09-17 05:17:28,191 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=10, pair=ENA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.67620000, open_since=2025-09-17 05:15:16)
+2025-09-17 05:17:33,266 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=10, pair=ENA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.67620000, open_since=2025-09-17 05:15:16)
+2025-09-17 05:17:37,794 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:17:38,180 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=10, pair=ENA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.67620000, open_since=2025-09-17 05:15:16)
+2025-09-17 05:17:43,153 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=10, pair=ENA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.67620000, open_since=2025-09-17 05:15:16)
+2025-09-17 05:17:48,268 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=10, pair=ENA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.67620000, open_since=2025-09-17 05:15:16)
+2025-09-17 05:17:53,232 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=10, pair=ENA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.67620000, open_since=2025-09-17 05:15:16)
+2025-09-17 05:17:58,241 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=10, pair=ENA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.67620000, open_since=2025-09-17 05:15:16)
+2025-09-17 05:18:03,322 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=10, pair=ENA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.67620000, open_since=2025-09-17 05:15:16)
+2025-09-17 05:18:08,257 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=10, pair=ENA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.67620000, open_since=2025-09-17 05:15:16)
+2025-09-17 05:18:13,230 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=10, pair=ENA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.67620000, open_since=2025-09-17 05:15:16)
+2025-09-17 05:18:18,262 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=10, pair=ENA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.67620000, open_since=2025-09-17 05:15:16)
+2025-09-17 05:18:23,216 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=10, pair=ENA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.67620000, open_since=2025-09-17 05:15:16)
+2025-09-17 05:18:28,199 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=10, pair=ENA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.67620000, open_since=2025-09-17 05:15:16)
+2025-09-17 05:18:28,206 - freqtrade.freqtradebot - INFO - Fee for Trade Trade(id=10, pair=ENA/USDT:USDT, amount=0.00000000, is_short=False, leverage=1.0, open_rate=0.67620000, open_since=2025-09-17 05:15:16) [buy]: 0.01988028 USDT - rate: 0.0002
+2025-09-17 05:18:28,207 - freqtrade.persistence.trade_model - INFO - Updating trade (id=10) ...
+2025-09-17 05:18:28,207 - freqtrade.persistence.trade_model - INFO - LIMIT_BUY has been fulfilled for Trade(id=10, pair=ENA/USDT:USDT, amount=147.00000000, is_short=False, leverage=1.0, open_rate=0.67620000, open_since=2025-09-17 05:15:16).
+2025-09-17 05:18:28,214 - freqtrade.wallets - INFO - Wallets synced.
+2025-09-17 05:18:28,217 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'trade_id': 10, 'type': entry_fill, 'buy_tag': '', 'enter_tag': '', 'exchange': 'Binance', 'pair': 'ENA/USDT:USDT', 'leverage': 1.0, 'direction': 'Long', 'limit': 0.6762, 'order_rate': 0.6762, 'open_rate': 0.6762, 'order_type': 'limit', 'stake_amount': 99.4014, 'stake_currency': 'USDT', 'base_currency': 'ENA', 'quote_currency': 'USDT', 'fiat_currency': 'USD', 'amount': 147.0, 'open_date': datetime.datetime(2025, 9, 17, 5, 15, 16, 891614, tzinfo=datetime.timezone.utc), 'current_rate': 0.6762, 'sub_trade': False}
+2025-09-17 05:18:37,830 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:19:37,867 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:20:41,725 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:21:41,772 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:22:41,945 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:23:41,989 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:24:42,031 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:25:44,284 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:26:44,320 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:27:44,368 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:28:44,407 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:29:44,429 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:30:46,977 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:31:10,745 - freqtrade.wallets - INFO - Wallets synced.
+2025-09-17 05:31:50,768 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:32:01,744 - VolumePairList - INFO - Pair BNB/USDT:USDT in your blacklist. Removing it from whitelist...
+2025-09-17 05:32:01,756 - freqtrade.plugins.pairlistmanager - INFO - Whitelist with 20 pairs: ['ETH/USDT:USDT', 'BTC/USDT:USDT', 'SOL/USDT:USDT', 'DOGE/USDT:USDT', 'XRP/USDT:USDT', 'AVNT/USDT:USDT', 'PUMP/USDT:USDT', 'SOMI/USDT:USDT', 'AVAX/USDT:USDT', 'MERL/USDT:USDT', 'TST/USDT:USDT', 'SUI/USDT:USDT', '1000PEPE/USDT:USDT', 'MYX/USDT:USDT', 'Q/USDT:USDT', 'ENA/USDT:USDT', 'WLFI/USDT:USDT', 'ZKC/USDT:USDT', 'HIFI/USDT:USDT', 'ADA/USDT:USDT']
+2025-09-17 05:32:50,809 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:33:50,842 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:34:50,896 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:35:54,567 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:36:54,602 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:37:54,647 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:38:54,692 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:39:54,734 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:40:53,892 - freqtrade.exchange.common - WARNING - fetch_l2_order_book() returned exception: "Could not get order book due to RequestTimeout. Message: binance GET https://fapi.binance.com/fapi/v1/depth?symbol=ENAUSDT&limit=5". Retrying still for 4 times.
+2025-09-17 05:40:59,697 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:43:44,959 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:44:45,004 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:45:48,707 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:46:48,749 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:47:48,793 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:48:48,829 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:49:48,871 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:50:52,001 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:51:52,045 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:52:52,091 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:53:52,128 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:54:52,173 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:55:53,719 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:56:58,668 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:57:58,709 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:58:58,749 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 05:59:58,792 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 06:01:01,675 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 06:01:17,267 - freqtrade.wallets - INFO - Wallets synced.
+2025-09-17 06:02:02,280 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 06:03:02,597 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 06:04:02,623 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 06:04:38,465 - freqtrade.plugins.pairlistmanager - INFO - Whitelist with 20 pairs: ['ETH/USDT:USDT', 'BTC/USDT:USDT', 'SOL/USDT:USDT', 'DOGE/USDT:USDT', 'XRP/USDT:USDT', 'AVNT/USDT:USDT', 'PUMP/USDT:USDT', 'SOMI/USDT:USDT', 'AVAX/USDT:USDT', 'MYX/USDT:USDT', 'TST/USDT:USDT', 'MERL/USDT:USDT', 'SUI/USDT:USDT', '1000PEPE/USDT:USDT', 'Q/USDT:USDT', 'ENA/USDT:USDT', 'WLFI/USDT:USDT', 'ZKC/USDT:USDT', 'HIFI/USDT:USDT', 'ADA/USDT:USDT']
+2025-09-17 06:05:14,241 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 06:06:16,435 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 06:07:16,463 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 06:08:16,492 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 06:09:16,521 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
+2025-09-17 06:10:18,751 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='2025.8', state='RUNNING'
