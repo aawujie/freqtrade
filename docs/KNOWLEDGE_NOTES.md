@@ -51,13 +51,13 @@ sqlite:////freqtrade/user_data/tradesv3.dryrun.sqlite
 
 #### 查看模拟交易记录
 ```bash
-docker compose exec freqtrade freqtrade show-trades \
+freqtrade show-trades \
   --db-url sqlite:////freqtrade/user_data/tradesv3.dryrun.sqlite
 ```
 
 #### 查看实盘交易记录
 ```bash
-docker compose exec freqtrade freqtrade show-trades \
+freqtrade show-trades \
   --db-url sqlite:////freqtrade/user_data/tradesv3.sqlite
 ```
 
