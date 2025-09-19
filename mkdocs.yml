@@ -1,6 +1,6 @@
-site_name: Freqtrade 量化交易文档中心
-site_description: 完整的 Freqtrade 量化交易机器人中文教程，从零开始掌握加密货币量化交易
-site_author: Freqtrade 中文社区
+site_name: Jie的量化学习笔记
+site_description: Jie的 Freqtrade 量化交易学习笔记，从零开始的量化交易之旅
+site_author: Jie
 
 theme:
   name: readthedocs
@@ -29,4 +29,4 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/freqtrade/freqtrade
 
-copyright: Copyright &copy; 2025 Freqtrade 中文文档
+copyright: Copyright &copy; 2025 Jie的量化学习笔记
