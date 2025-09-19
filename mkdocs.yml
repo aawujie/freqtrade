@@ -1,0 +1,32 @@
+site_name: Freqtrade 量化交易文档中心
+site_description: 完整的 Freqtrade 量化交易机器人中文教程，从零开始掌握加密货币量化交易
+site_author: Freqtrade 中文社区
+
+theme:
+  name: readthedocs
+  language: zh
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+
+nav:
+  - 首页: index.md
+  - 配置详解: 01-配置文件详解.md
+  - 回测指南: 02-回测结果解读指南.md
+  - 交易术语: 03-金融交易术语详解.md
+
+dev_addr: 10.24.32.125:8000
+
+# 插件配置
+plugins:
+  - search:
+      lang: zh
+
+# 额外配置
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/freqtrade/freqtrade
+
+copyright: Copyright &copy; 2025 Freqtrade 中文文档
