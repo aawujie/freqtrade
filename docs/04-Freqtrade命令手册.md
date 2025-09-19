@@ -88,6 +88,9 @@ docker compose logs -f freqtrade
 
 # 重启服务
 docker compose restart
+
+# 进入容器
+docker exec -it freqtrade /bin/bash
 ```
 
 ### Freqtrade 状态查询
