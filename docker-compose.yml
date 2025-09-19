@@ -20,6 +20,8 @@ services:
     #   dockerfile: "./docker/Dockerfile.custom"
     restart: unless-stopped
     container_name: freqtrade
+    env_file:
+      - .env
     volumes:
       - "./user_data:/freqtrade/user_data"
     # Expose api on port 8080 (localhost only)
@@ -34,3 +36,11 @@ services:
       --db-url sqlite:////freqtrade/user_data/tradesv3.sqlite
       --config /freqtrade/user_data/config.json
       --strategy SampleStrategy
+      --exchange.key ${EXCHANGE_KEY}
+      --exchange.secret ${EXCHANGE_SECRET}
+      --telegram.token ${TELEGRAM_TOKEN}
+      --telegram.chat_id ${TELEGRAM_CHAT_ID}
+      --api-server.listen-ip ${LISTEN_IP_ADDRESS}
+      --api-server.listen-port ${LISTEN_PORT}
+      --api-server.jwt_secret_key ${JWT_SECRET}
+      --api-server.ws_token ${WS_TOKEN}
