@@ -40,12 +40,6 @@ dev_addr: 10.24.32.125:8000
 plugins:
   - search:
       lang: zh
-  - git-revision-date-localized:
-      enable_creation_date: true
-      type: timeago
-  - git-committers:
-      repository: freqtrade/freqtrade
-      branch: main
 
 # Markdown扩展
 markdown_extensions:
@@ -56,13 +50,12 @@ markdown_extensions:
   - meta
   - toc:
       permalink: true
-  - pymdownx.arithmatex
   - pymdownx.betterem
   - pymdownx.caret
   - pymdownx.details
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.highlight
   - pymdownx.inlinehilite
   - pymdownx.keys
@@ -79,14 +72,5 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/freqtrade/freqtrade
-  version:
-    provider: mike
 
 copyright: Copyright &copy; 2025 Jie的量化学习笔记
-
-# 额外CSS和JS（如果需要的话）
-# extra_css:
-#   - stylesheets/extra.css
-
-# extra_javascript:
-#   - javascripts/extra.js
