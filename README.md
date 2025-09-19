@@ -1,6 +1,7 @@
 # Freqtrade 量化交易机器人使用指南
 
 ## 📋 目录
+
 - [项目简介](#项目简介)
 - [环境要求](#环境要求)
 - [快速开始](#快速开始)
@@ -19,6 +20,7 @@
 Freqtrade 是一个开源的加密货币量化交易机器人，支持多种交易所和策略。本项目基于 Docker 部署，提供完整的交易、回测和可视化功能。
 
 ### 主要特性
+
 - ✅ 支持 100+ 交易所（Binance、OKX、Bybit 等）
 - ✅ 策略回测和优化
 - ✅ 实时交易监控
@@ -42,6 +44,9 @@ docker compose up -d
 
 # 查看运行状态
 docker compose ps
+
+# 启动文档服务
+uvx mkdocs serve
 ```
 
 ### 2. 访问 Web UI
@@ -49,6 +54,7 @@ docker compose ps
 打开浏览器访问：`http://localhost:8080`
 
 **登录信息：**
+
 - 用户名：`freqtrader`
 - 密码：`123`
 
@@ -83,17 +89,18 @@ freqtrade status
 
 ### 重要配置项说明
 
-| 配置项 | 说明 | 推荐值 |
-|--------|------|--------|
-| `max_open_trades` | 最大同时交易数量 | 3-10 |
-| `stake_amount` | 每次交易金额 | 100-1000 USDT |
-| `dry_run` | 模拟交易模式 | 新手建议 true |
-| `stoploss` | 止损比例 | -0.1 (10%) |
-| `minimal_roi` | 最小收益率 | {"0": 0.04} |
+| 配置项              | 说明             | 推荐值        |
+| ------------------- | ---------------- | ------------- |
+| `max_open_trades` | 最大同时交易数量 | 3-10          |
+| `stake_amount`    | 每次交易金额     | 100-1000 USDT |
+| `dry_run`         | 模拟交易模式     | 新手建议 true |
+| `stoploss`        | 止损比例         | -0.1 (10%)    |
+| `minimal_roi`     | 最小收益率       | {"0": 0.04}   |
 
 ## 📈 策略开发
 
 ### 策略文件位置
+
 ```
 user_data/strategies/
 ├── sample_strategy.py    # 示例策略
@@ -110,14 +117,14 @@ class MyStrategy(IStrategy):
     # 策略参数
     buy_rsi = 30
     sell_rsi = 70
-    
+  
     # 买入信号
     def populate_entry_trend(self, dataframe, metadata):
         dataframe.loc[
             (dataframe['rsi'] < self.buy_rsi),
             'enter_long'] = 1
         return dataframe
-    
+  
     # 卖出信号
     def populate_exit_trend(self, dataframe, metadata):
         dataframe.loc[
@@ -169,13 +176,13 @@ freqtrade backtesting \
 
 ### 4. 回测结果解读
 
-| 指标 | 说明 | 理想值 |
-|------|------|--------|
-| Total Profit % | 总收益率 | > 10% |
-| Win Rate | 胜率 | > 50% |
-| Sharpe Ratio | 夏普比率 | > 1.0 |
-| Max Drawdown | 最大回撤 | < 20% |
-| Profit Factor | 盈利因子 | > 1.5 |
+| 指标           | 说明     | 理想值 |
+| -------------- | -------- | ------ |
+| Total Profit % | 总收益率 | > 10%  |
+| Win Rate       | 胜率     | > 50%  |
+| Sharpe Ratio   | 夏普比率 | > 1.0  |
+| Max Drawdown   | 最大回撤 | < 20%  |
+| Profit Factor  | 盈利因子 | > 1.5  |
 
 ## 🖥️ 可视化界面
 
@@ -382,16 +389,17 @@ docker compose logs freqtrade | grep ERROR
 ### 安全提醒
 
 1. **API 安全**
+
    - 不要将 API 密钥提交到版本控制
    - 使用只读权限的 API 密钥进行测试
    - 定期轮换 API 密钥
-
 2. **资金安全**
+
    - 实盘交易前充分测试
    - 设置合理的止损和止盈
    - 不要投入超过承受能力的资金
-
 3. **数据备份**
+
    - 定期备份配置文件
    - 保存重要的回测结果
    - 记录交易日志
@@ -399,11 +407,12 @@ docker compose logs freqtrade | grep ERROR
 ### 性能优化
 
 1. **资源使用**
+
    - 监控内存和 CPU 使用率
    - 合理设置 `max_open_trades`
    - 定期清理历史数据
-
 2. **网络优化**
+
    - 使用稳定的网络连接
    - 考虑使用 VPS 部署
    - 配置合适的超时参数
@@ -411,11 +420,12 @@ docker compose logs freqtrade | grep ERROR
 ### 法律合规
 
 1. **了解当地法规**
+
    - 确保交易活动合法
    - 遵守税务规定
    - 注意反洗钱要求
-
 2. **风险披露**
+
    - 加密货币交易风险极高
    - 可能损失全部投资
    - 请谨慎决策
@@ -445,16 +455,20 @@ docker compose logs freqtrade | grep ERROR
 ## 📚 文档目录
 
 ### 快速入门
+
 - **[快速开始指南](docs/QUICKSTART.md)** - 5分钟快速上手
 - **[学习路径指南](docs/LEARNING_PATH.md)** - 从零基础到精通的完整学习路径
 
 ### 配置指南
+
 - **[配置详解](docs/CONFIG_GUIDE.md)** - 详细的配置参数说明和最佳实践
 
 ### 知识笔记
+
 - **[知识点笔记](docs/KNOWLEDGE_NOTES.md)** - 重要概念和命令速查
 
 ### 实用工具
+
 - **[show-trades.sh](docs/show-trades.sh)** - 便捷的交易记录查看脚本
 
 ---
