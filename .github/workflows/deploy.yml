@@ -36,7 +36,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          uv pip install --system mkdocs mkdocs-material
+          uv sync
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
