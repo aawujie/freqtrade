@@ -10,8 +10,6 @@ user_data/backtest_results/*.zip
 user_data/backtest_results/*.meta.json
  
 # 敏感配置（不要提交）
-user_data/config.json
-user_data/config_backtest.json
 *.env
 *.secrets.json
 scripts/set-secrets.sh
