@@ -26,7 +26,7 @@ services:
     # Please read the https://www.freqtrade.io/en/stable/rest-api/ documentation
     # for more information.
     ports:
-      - "8080:8080"
+      - "0.0.0.0:8080:8080" # 映射到本地所有IP
     # Default command used when running `docker compose up`
     command: >
       trade
