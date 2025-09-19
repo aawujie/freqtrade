@@ -3,6 +3,8 @@
 *.log
 *.zip
 *.feather
+*.pkl
+*.fthypt
 
 # 忽略回测结果文件
 *.zip
