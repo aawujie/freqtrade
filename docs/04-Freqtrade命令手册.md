@@ -120,7 +120,8 @@ freqtrade list-timeframes
 freqtrade download-data \
   --pairs BTC/USDT:USDT \
   --timeframes 5m \
-  --days 30
+  --days 30 \
+  --timerange 20240101-20241231 \  用 days 或 timerange
 
 # 下载多个交易对数据
 freqtrade download-data \

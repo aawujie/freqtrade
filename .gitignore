@@ -3,6 +3,8 @@
 *.sqlite-wal
 *.log
 *.zip
+*.feather
+
 # 忽略回测结果文件
 *.zip
 *.meta.json
@@ -12,4 +14,3 @@ user_data/backtest_results/*.meta.json
 # 敏感配置（不要提交）
 *.env
 *.secrets.json
-scripts/set-secrets.sh
