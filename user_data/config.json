@@ -33,8 +33,8 @@
     },
     "exchange": {
         "name": "binance",
-        "key": "zmG84d2OVgegTfLKyrG4DkxQsNzJY6YqLqHeqfWRLYQQmmiW7AyZXttXzLJHQfaC",
-        "secret": "3DryTZ0p4CCbnNARsDuNugXIhnYy5f7dxQ6NKmimuitzZtzfT5s81ROOFD3xjeUW",
+        "key": "${EXCHANGE_KEY}",
+        "secret": "${EXCHANGE_SECRET}",
         "ccxt_config": {
 
         },
@@ -59,8 +59,8 @@
     ],
     "telegram": {
         "enabled": true,
-        "token": "8016047193:AAGiihAUC212PFQvYLCSk5fj1RkuJni-QL0",
-        "chat_id": "6227868121"
+        "token": "${TELEGRAM_TOKEN}",
+        "chat_id": "${TELEGRAM_CHAT_ID}"
     },
     "api_server": {
         "enabled": true,
@@ -68,8 +68,8 @@
         "listen_port": 8080,
         "verbosity": "error",
         "enable_openapi": false,
-        "jwt_secret_key": "d68bc8b443a1195cf306758c254ca0fd484f94abd6e0910c64c045cff1012db0",
-        "ws_token": "uX7c2FepFtiIZDefU1FtnVyP6Uv-H2xW4Q",
+        "jwt_secret_key": "${JWT_SECRET}",
+        "ws_token": "${WS_TOKEN}",
         "CORS_origins": [
 
         ],

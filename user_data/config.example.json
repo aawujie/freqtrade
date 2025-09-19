@@ -1,0 +1,29 @@
+{
+    "$schema": "https://schema.freqtrade.io/schema.json",
+    "max_open_trades": -1,
+    "stake_currency": "USDT",
+    "stake_amount": 100,
+    "dry_run": true,
+    "trading_mode": "futures",
+    "exchange": {
+        "name": "binance",
+        "key": "${EXCHANGE_KEY}",
+        "secret": "${EXCHANGE_SECRET}"
+    },
+    "telegram": {
+        "enabled": true,
+        "token": "${TELEGRAM_TOKEN}",
+        "chat_id": "${TELEGRAM_CHAT_ID}"
+    },
+    "api_server": {
+        "enabled": true,
+        "listen_ip_address": "0.0.0.0",
+        "listen_port": 8080,
+        "jwt_secret_key": "${JWT_SECRET}",
+        "ws_token": "${WS_TOKEN}",
+        "username": "freqtrader",
+        "password": "CHANGE_ME"
+    }
+}
+
+
