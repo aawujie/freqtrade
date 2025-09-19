@@ -44,6 +44,13 @@ jobs:
           enablement: true
 
       - name: Build with MkDocs
+        env:
+          EXCHANGE_KEY: ${{ secrets.EXCHANGE_KEY }}
+          EXCHANGE_SECRET: ${{ secrets.EXCHANGE_SECRET }}
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          JWT_SECRET: ${{ secrets.JWT_SECRET }}
+          WS_TOKEN: ${{ secrets.WS_TOKEN }}
         run: uv run mkdocs build
 
       - name: Upload artifact
