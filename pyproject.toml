@@ -5,6 +5,8 @@ description = "Freqtrade documentation"
 readme = "README.md"
 requires-python = ">=3.8"
 dependencies = [
+    "jupyter>=1.1.1",
+    "matplotlib>=3.7.5",
     "mkdocs>=1.5.0",
     "mkdocs-material>=9.0.0",
     "pandas>=2.0.3",
