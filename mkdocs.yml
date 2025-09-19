@@ -8,13 +8,31 @@ theme:
   features:
     - navigation.tabs
     - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+  palette:
+    primary: blue
+    accent: blue
 
 nav:
   - 首页: index.md
-  - 配置详解: 01-配置文件详解.md
-  - 回测指南: 02-回测结果解读指南.md
-  - 交易术语: 03-金融交易术语详解.md
-  - 命令手册: 04-Freqtrade命令手册.md
+
+  - 入门基础:
+    - 金融交易术语: 03-金融交易术语详解.md
+
+  - 配置与使用:
+    - 配置文件详解: 01-配置文件详解.md
+    - Freqtrade命令手册: 04-Freqtrade命令手册.md
+
+  - 策略开发:
+    - 策略编写指南: 06-策略编写指南.md
+    - Hyperopt优化详解: 05-Hyperopt结果解读指南.md
+
+  - 分析与评估:
+    - 回测结果解读指南: 02-回测结果解读指南.md
 
 dev_addr: 10.24.32.125:8000
 
@@ -22,6 +40,38 @@ dev_addr: 10.24.32.125:8000
 plugins:
   - search:
       lang: zh
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: timeago
+  - git-committers:
+      repository: freqtrade/freqtrade
+      branch: main
+
+# Markdown扩展
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - footnotes
+  - meta
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex
+  - pymdownx.betterem
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist
+  - pymdownx.tilde
 
 # 额外配置
 extra:
@@ -29,5 +79,14 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/freqtrade/freqtrade
+  version:
+    provider: mike
 
 copyright: Copyright &copy; 2025 Jie的量化学习笔记
+
+# 额外CSS和JS（如果需要的话）
+# extra_css:
+#   - stylesheets/extra.css
+
+# extra_javascript:
+#   - javascripts/extra.js
