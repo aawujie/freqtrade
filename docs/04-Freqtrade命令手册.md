@@ -141,7 +141,7 @@ freqtrade download-data \
 
 ```bash
 # 查看已下载的数据
-freqtrade list-data
+freqtrade list-data --show-timerange
 
 # 清理过期数据
 freqtrade clean-data
