@@ -1,0 +1,35 @@
+{
+  "strategy_name": "DoubleMAStrategy",
+  "params": {
+    "roi": {
+      "0": 0.06,
+      "180": 0.05,
+      "360": 0.04,
+      "720": 0.03,
+      "1440": 0.02
+    },
+    "stoploss": {
+      "stoploss": -0.08
+    },
+    "trailing": {
+      "trailing_stop": false,
+      "trailing_stop_positive": 0.01,
+      "trailing_stop_positive_offset": 0.0,
+      "trailing_only_offset_is_reached": false
+    },
+    "max_open_trades": {
+      "max_open_trades": 5
+    },
+    "buy": {
+      "fast_ma_period": 18,
+      "ma_type": "EMA",
+      "min_volume_multiplier": 0.744,
+      "slow_ma_period": 79,
+      "trend_filter_period": 197
+    },
+    "sell": {},
+    "protection": {}
+  },
+  "ft_stratparam_v": 1,
+  "export_time": "2025-09-20 02:29:17.732924+00:00"
+}

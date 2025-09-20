@@ -31,6 +31,9 @@ nav:
     - 策略编写指南: 06-策略编写指南.md
     - Hyperopt优化详解: 05-Hyperopt结果解读指南.md
 
+  - 策略案例:
+    - 双均线策略完整指南: DoubleMAStrategy_README.md
+
   - 分析与评估:
     - 回测结果解读指南: 02-回测结果解读指南.md
 
