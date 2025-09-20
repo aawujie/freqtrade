@@ -38,21 +38,21 @@
     "name": "binance",
     "pair_whitelist": [
       "BTC/USDT",
-      "BCH/USDT",
-      "ETH/USDT",
+      "ETC/USDT",
+      "BNB/USDT",
+      "DOGE/USDT"
+    ],
+    "pair_blacklist": [
       "LINK/USDT",
       "LTC/USDT",
       "SOL/USDT",
-      "BNB/USDT",
+      "ETH/USDT",
       "XRP/USDT",
       "ADA/USDT",
       "DOT/USDT",
-      "ETC/USDT",
+      "BCH/USDT",
       "ALGO/USDT",
       "LUNA/USDT"
-    ],
-    "pair_blacklist": [
-      "BNB/.*"  
     ],
     "ccxt_config": {},
     "ccxt_async_config": {}

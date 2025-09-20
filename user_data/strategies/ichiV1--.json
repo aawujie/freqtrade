@@ -1,0 +1,28 @@
+{
+  "strategy_name": "ichiV1",
+  "params": {
+    "max_open_trades": {
+      "max_open_trades": 5
+    },
+    "buy": {},
+    "sell": {},
+    "protection": {},
+    "roi": {
+      "0": 0.057,
+      "45": 0.039,
+      "148": 0.021,
+      "453": 0
+    },
+    "stoploss": {
+      "stoploss": -0.115
+    },
+    "trailing": {
+      "trailing_stop": true,
+      "trailing_stop_positive": 0.01,
+      "trailing_stop_positive_offset": 0.105,
+      "trailing_only_offset_is_reached": false
+    }
+  },
+  "ft_stratparam_v": 1,
+  "export_time": "2025-09-20 11:02:00.577717+00:00"
+}
