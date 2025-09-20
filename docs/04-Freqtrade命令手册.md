@@ -246,7 +246,11 @@ freqtrade hyperopt \
 freqtrade hyperopt \
   --strategy MyStrategy \
   --hyperopt-loss SharpeHyperOptLoss \
-  --epochs 200
+  --epochs 200 \
+  # optional
+  --spaces sell # 只优化卖出参数 (--spaces sell) 
+  --spaces all # 优化所有参数 (--spaces all 或不指定)
+  --spaces buy sell # 同时优化买入和卖出 (--spaces buy sell)
 
 # 自定义时间范围
 freqtrade hyperopt \
