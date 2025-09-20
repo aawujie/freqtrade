@@ -21,15 +21,15 @@
       "max_open_trades": 5
     },
     "buy": {
-      "fast_ma_period": 18,
+      "fast_ma_period": 27,
       "ma_type": "EMA",
-      "min_volume_multiplier": 0.744,
-      "slow_ma_period": 79,
-      "trend_filter_period": 197
+      "min_volume_multiplier": 2.697,
+      "slow_ma_period": 67,
+      "trend_filter_period": 123
     },
     "sell": {},
     "protection": {}
   },
   "ft_stratparam_v": 1,
-  "export_time": "2025-09-20 02:29:17.732924+00:00"
+  "export_time": "2025-09-20 02:37:43.416571+00:00"
 }
