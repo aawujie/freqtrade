@@ -258,12 +258,39 @@ freqtrade hyperopt \
   --timerange 20240101-20241231 \
   --epochs 100
 
-# 优化结果分析
+# 优化结果查看（请参考下节“Hyperopt 结果查看与选择（重要）”）
+```
+
+#### Hyperopt 结果查看与选择（重要）
+
+```bash
+# 1) 列出历史优化结果文件（含时间戳）
 freqtrade hyperopt-list
 
-# 显示最佳参数
-freqtrade hyperopt-show --index 0
+# 2) 查看“最近一次”的最佳结果（由 .last_result.json 指向）
+freqtrade hyperopt-show --best
+
+# 3) 查看“最近一次”结果中的前 N 条，并定位第 K 条（1-based）
+freqtrade hyperopt-show --n 100 --index 7
+
+# 4) 指定结果文件查看（推荐在多次运行后精确定位）
+freqtrade hyperopt-show \
+  --hyperopt-filename user_data/hyperopt_results/<你的文件>.fthypt \
+  --n 200 \
+  --index 3
+
+# 5) 以 JSON 形式输出当前选择的结果（便于复制参数）
+freqtrade hyperopt-show --print-json
+
+# 6) 查“最近一次”文件名（供复制到 --hyperopt-filename）
+cat user_data/hyperopt_results/.last_result.json
 ```
+
+说明：
+- 不带 `--hyperopt-filename` 时，`hyperopt-show` 默认读取 `user_data/hyperopt_results/.last_result.json` 指向的“最近一次”结果文件。
+- 表格中只显示“出现新最佳（Best）时刻”的快照（里程碑），不会打印全部 epochs；想看更多条目用 `--n` 调大。
+- `--index` 是在当前选中文件、当前展示列表（由 `--n` 决定）里的 1-based 索引。
+- 并行优化（`--job-workers -1`）时，trial 完成顺序与 epoch 编号不完全一致，属于正常现象。
 
 ---
 
