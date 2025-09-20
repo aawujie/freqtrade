@@ -22,7 +22,6 @@ user_data/
 │   └── DoubleMAHyperOptLoss.py      # 优化损失函数
 └── config_double_ma.json             # 策略配置文件
 
-test_double_ma_strategy.py            # 测试脚本
 DoubleMAStrategy_README.md            # 使用说明
 ```
 
@@ -386,6 +385,37 @@ new_parameter = IntParameter(
 ## 🤝 贡献
 
 欢迎提交问题和改进建议！
+
+---
+
+## 🧪 策略测试工具
+
+### 📓 通用策略测试器 (strategy_tester.ipynb)
+
+我们还提供了一个功能强大的 **Jupyter Notebook** 工具，用于测试任何Freqtrade策略：
+
+**📁 文件位置**: `strategy_tester.ipynb`
+
+**🎯 主要功能**:
+- ✅ 自动检测和测试任意策略
+- ✅ 可视化测试结果和数据分析
+- ✅ 交互式参数配置
+- ✅ 完整的故障排除指南
+- ✅ 一键生成回测和优化命令
+
+**🚀 使用方法**:
+1. 在Jupyter中打开 `strategy_tester.ipynb`
+2. 修改顶部的配置参数
+3. 依次运行所有代码单元
+4. 根据测试结果进行策略优化
+
+**💡 优势**:
+- 🎨 直观的可视化界面
+- 🔧 灵活的参数配置
+- 📊 详细的性能分析
+- 🐛 智能的错误诊断
+
+**🎊 推荐**: 新手用户建议先使用这个Notebook进行策略测试！
 
 ---
 
