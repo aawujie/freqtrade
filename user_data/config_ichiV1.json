@@ -1,6 +1,6 @@
 {
   "strategy": "ichiV1",
-  "timeframe": "15m",
+  "timeframe": "5m",
 
   "dry_run": true,
   "dry_run_wallet": 100,
@@ -8,7 +8,7 @@
   "tradable_balance_ratio": 0.99,
   "fiat_display_currency": "USD",
   "stake_currency": "USDT",
-  "stake_amount": "unlimited",
+  "stake_amount": 20,
   "amend_last_stake_amount": true,
 
   "pairlists": [
