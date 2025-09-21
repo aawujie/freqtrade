@@ -18,11 +18,27 @@
 		"password": "123"
 	},
     "exchange": {
-        "name": "binance"
+        "name": "binance",
+        "pair_whitelist": [
+            "BTC/USDT",
+            "ETH/USDT"
+        ],
+        "pair_blacklist": []
     },
 	"bot_name": "freqtrade-web",
 	"initial_state": "running",
-	"internals": {
+	"stake_currency": "USDT",
+    "strategy": "SampleStrategy",
+    "timeframe": "5m",
+    "dry_run": true,
+    "max_open_trades": 3,
+    "stake_amount": 100,
+    "fiat_display_currency": "USD",
+    "trading_mode": "spot",
+    "pairlists": [
+        { "method": "StaticPairList" }
+    ],
+    "internals": {
 		"process_throttle_secs": 5
 	}
 }
