@@ -45,6 +45,7 @@
 - [Freqtrade](https://www.wuzao.com/document/freqtrade/): 量化交易框架
 - [开源策略分享](https://freqst.com/)
 - [技术指标画图库](https://ta-lib.github.io/ta-lib-python/doc_index.html?ref=defiplot.com)
+- [botacademy](https://botacademy.ddns.net/)
 
 ## 📖 学习建议
 

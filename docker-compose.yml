@@ -38,6 +38,7 @@ services:
     # for more information.
     ports:
       - "0.0.0.0:8080:8080" # 映射到本地所有IP
+      - "0.0.0.0:8081:8081" # 为 ichiV1 暴露到主机8081
     # Default command used when running `docker compose up`
     command: >
       webserver
