@@ -72,6 +72,24 @@
     "chat_id": ""
   },
 
+  "webhook": {
+    "enabled": true,
+    "url": "${FREQTRADE__WEBHOOK__URL}",
+    "format": "json",
+    "status": {
+      "msg_type": "text",
+      "content": { "text": "状态：{status}" }
+    },
+    "entry": {
+      "msg_type": "text",
+      "content": { "text": "BUY {pair} @ {limit:8f} stake {stake_amount:8f} {stake_currency}" }
+    },
+    "exit": {
+      "msg_type": "text",
+      "content": { "text": "SELL {pair} @ {limit:8f} PnL {profit_amount:8f} {stake_currency} ({profit_ratio})" }
+    }
+  },
+
   "api_server": {
     "enabled": true,
     "listen_ip_address": "0.0.0.0",
