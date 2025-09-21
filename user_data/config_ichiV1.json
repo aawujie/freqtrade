@@ -10,6 +10,7 @@
   "stake_currency": "USDT",
   "stake_amount": 20,
   "amend_last_stake_amount": true,
+  "trading_mode": "spot",
 
   "pairlists": [
     {
@@ -32,6 +33,13 @@
     "price_side": "same",
     "use_order_book": true,
     "order_book_top": 1
+  },
+
+  "unfilledtimeout": {
+    "entry": 10,
+    "exit": 10,
+    "exit_timeout_count": 0,
+    "unit": "minutes"
   },
 
   "exchange": {
@@ -77,7 +85,12 @@
     "password": "123"
   },
 
+  "bot_name": "ichiV1",
   "initial_state": "running"
+  ,
+  "internals": {
+    "process_throttle_secs": 5
+  }
 }
 
 

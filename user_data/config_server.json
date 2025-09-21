@@ -1,0 +1,28 @@
+{
+	"$schema": "https://schema.freqtrade.io/schema.json",
+	"telegram": {
+		"enabled": true,
+		"token": "${FREQTRADE__TELEGRAM__TOKEN}",
+		"chat_id": "${FREQTRADE__TELEGRAM__CHAT_ID}"
+	},
+	"api_server": {
+		"enabled": true,
+		"listen_ip_address": "0.0.0.0",
+		"listen_port": 8080,
+		"verbosity": "error",
+		"enable_openapi": false,
+		"jwt_secret_key": "${FREQTRADE__API_SERVER__JWT_SECRET_KEY}",
+		"ws_token": "${FREQTRADE__API_SERVER__WS_TOKEN}",
+		"CORS_origins": [],
+		"username": "freqtrader",
+		"password": "123"
+	},
+    "exchange": {
+        "name": "binance"
+    },
+	"bot_name": "freqtrade-web",
+	"initial_state": "running",
+	"internals": {
+		"process_throttle_secs": 5
+	}
+}
