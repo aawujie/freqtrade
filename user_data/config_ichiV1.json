@@ -1,6 +1,10 @@
 {
+  "add_config_files": [
+      "config_plot.json"
+  ],
   "strategy": "ichiV1",
   "timeframe": "5m",
+  "force_entry_enable": true,
 
   "dry_run": true,
   "dry_run_wallet": 100,
@@ -10,7 +14,7 @@
   "stake_currency": "USDT",
   "stake_amount": 20,
   "amend_last_stake_amount": true,
-  "trading_mode": "spot",
+  "trading_mode": "future",
 
   "pairlists": [
     {
@@ -48,7 +52,8 @@
       "BTC/USDT",
       "ETC/USDT",
       "BNB/USDT",
-      "DOGE/USDT"
+      "DOGE/USDT",
+      "ASTER/USDT:USDT"
     ],
     "pair_blacklist": [
       "LINK/USDT",
@@ -76,6 +81,14 @@
     "enabled": true,
     "url": "${FREQTRADE__WEBHOOK__URL}",
     "format": "json",
+    "startup": {
+      "msg_type": "text",
+      "content": { "text": "{status}" }
+    },
+    "warning": {
+      "msg_type": "text",
+      "content": { "text": "{status}" }
+    },
     "status": {
       "msg_type": "text",
       "content": { "text": "状态：{status}" }
@@ -93,7 +106,7 @@
   "api_server": {
     "enabled": true,
     "listen_ip_address": "0.0.0.0",
-    "listen_port": 8081,
+    "listen_port": 8080,
     "verbosity": "error",
     "enable_openapi": false,
     "jwt_secret_key": "",
