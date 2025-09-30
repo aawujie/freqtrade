@@ -107,7 +107,17 @@ case "${1}" in
     status)
         check_container
         echo -e "${BLUE}📊 交易状态:${NC}"
-        docker exec $CONTAINER freqtrade status
+        echo ""
+        echo "容器状态:"
+        docker ps --filter "name=$CONTAINER" --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
+        echo ""
+        echo "最近的日志 (最后 10 行):"
+        docker logs --tail=10 $CONTAINER 2>&1
+        echo ""
+        echo -e "${YELLOW}💡 提示:${NC}"
+        echo "  - 实时日志: ./ft.sh logs-live"
+        echo "  - 查看交易: 使用 Telegram Bot 发送 /status"
+        echo "  - 查看记录: ./ft.sh show-trades"
         ;;
     
     # 回测命令
@@ -222,13 +232,19 @@ case "${1}" in
             --userdir /freqtrade/user_data
         ;;
     
-    show-trades)
+    show-trades|trades)
         check_container
         STRATEGY=${2:-ichiV1}
         CONFIG=$(get_config $STRATEGY)
         echo -e "${BLUE}💼 交易记录:${NC}"
         docker exec $CONTAINER freqtrade show-trades \
             -c /freqtrade/$CONFIG
+        ;;
+    
+    ps)
+        check_container
+        echo -e "${BLUE}🔍 运行中的进程:${NC}"
+        docker exec $CONTAINER ps aux | grep freqtrade | grep -v grep
         ;;
     
     # 工具命令
