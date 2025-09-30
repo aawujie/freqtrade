@@ -5,6 +5,7 @@
 *.feather
 *.pkl
 *.fthypt
+*.DS_Store
 
 # 忽略回测结果文件
 *.zip
