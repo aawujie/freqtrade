@@ -17,6 +17,11 @@ user_data/plot/*.html
 user_data/plot/*.png
 user_data/plot/*.json
 
+# 忽略数据库文件
+user_data/database/*.sqlite
+user_data/database/*.sqlite-shm
+user_data/database/*.sqlite-wal
+
 # 敏感配置（不要提交）
 *.env
 *.secrets.json

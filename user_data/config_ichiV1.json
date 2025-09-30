@@ -52,7 +52,7 @@
 	
 	"bot_name": "ichiV1",
 	"initial_state": "running",
-	"db_url": "sqlite:///trades_ichiV1.sqlite",
+	"db_url": "sqlite:///database/trades_ichiV1.sqlite",
 	"logfile": "logs/freqtrade_ichiV1_8081.log",
 	
 	"internals": {
