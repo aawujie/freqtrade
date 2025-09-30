@@ -11,6 +11,13 @@
 | `config_secrets.json.example` | 敏感信息示例模板 | ✅ 是 |
 | `config_pairs_spot.json` | 现货交易对列表 | ✅ 是 |
 | `config_pairs_futures.json` | 合约交易对列表 | ✅ 是 |
+| `config_plot.json` | 通用绘图配置 | ✅ 是 |
+| `config_plot_minimal.json` | 最简绘图配置 | ✅ 是 |
+| `config_plot_double_ma.json` | 双均线策略绘图配置 | ✅ 是 |
+| `config_plot_ichimoku.json` | 一目均衡策略绘图配置 | ✅ 是 |
+| `config_telegram.json` | Telegram 通知配置 | ✅ 是 |
+| `config_telegram.json.example` | Telegram 配置示例 | ✅ 是 |
+| `config_webhook.json` | Webhook 通知配置 | ✅ 是 |
 
 ## 🚀 快速使用
 

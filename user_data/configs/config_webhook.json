@@ -1,0 +1,90 @@
+{
+	"_comment": "Webhook 通知模块配置 - 支持企业微信、钉钉、飞书等",
+	"_how_to_disable": "如果不需要某个通知，可以删除对应的配置项或添加 'enabled': false",
+	
+	"webhook": {
+		"enabled": true,
+		"url": "${FREQTRADE__WEBHOOK__URL}",
+		"format": "json",
+		
+		"_startup": "机器人启动通知",
+		"startup": {
+			"msg_type": "text",
+			"content": {
+				"text": "🚀 Freqtrade 已启动\n状态: {status}"
+			}
+		},
+		
+		"_warning": "警告通知",
+		"warning": {
+			"msg_type": "text",
+			"content": {
+				"text": "⚠️ 警告\n{status}"
+			}
+		},
+		
+		"_status": "状态更新通知",
+		"status": {
+			"msg_type": "text",
+			"content": {
+				"text": "📊 状态更新\n{status}"
+			}
+		},
+		
+		"_entry": "买入通知",
+		"entry": {
+			"msg_type": "text",
+			"content": {
+				"text": "🟢 买入信号\n交易对: {pair}\n价格: {limit:.8f}\n投入: {stake_amount:.8f} {stake_currency}\n时间: {date}"
+			}
+		},
+		
+		"_entry_fill": "买入成交通知",
+		"entry_fill": {
+			"msg_type": "text",
+			"content": {
+				"text": "✅ 买入成交\n交易对: {pair}\n成交价: {open_rate:.8f}\n数量: {amount:.8f}\n成本: {stake_amount:.8f} {stake_currency}"
+			}
+		},
+		
+		"_entry_cancel": "买入取消通知",
+		"entry_cancel": {
+			"msg_type": "text",
+			"content": {
+				"text": "❌ 买入订单已取消\n交易对: {pair}\n原因: {reason}"
+			}
+		},
+		
+		"_exit": "卖出通知",
+		"exit": {
+			"msg_type": "text",
+			"content": {
+				"text": "🔴 卖出信号\n交易对: {pair}\n价格: {limit:.8f}\n收益: {profit_amount:.8f} {stake_currency} ({profit_ratio:.2%})\n原因: {exit_reason}"
+			}
+		},
+		
+		"_exit_fill": "卖出成交通知",
+		"exit_fill": {
+			"msg_type": "text",
+			"content": {
+				"text": "💰 卖出成交\n交易对: {pair}\n成交价: {close_rate:.8f}\n收益: {profit_amount:.8f} {stake_currency} ({profit_ratio:.2%})\n持仓时长: {duration}"
+			}
+		},
+		
+		"_exit_cancel": "卖出取消通知",
+		"exit_cancel": {
+			"msg_type": "text",
+			"content": {
+				"text": "❌ 卖出订单已取消\n交易对: {pair}\n原因: {reason}"
+			}
+		}
+	},
+	
+	"_usage_notes": [
+		"1. 设置环境变量: export FREQTRADE__WEBHOOK__URL='your_webhook_url'",
+		"2. 企业微信机器人: https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=YOUR_KEY",
+		"3. 钉钉机器人: https://oapi.dingtalk.com/robot/send?access_token=YOUR_TOKEN",
+		"4. 飞书机器人: https://open.feishu.cn/open-apis/bot/v2/hook/YOUR_HOOK",
+		"5. 可用变量请参考: https://www.freqtrade.io/en/stable/webhook-config/"
+	]
+}

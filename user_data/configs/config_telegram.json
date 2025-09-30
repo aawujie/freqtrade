@@ -1,0 +1,33 @@
+{
+	"_comment": "Telegram 通知模块配置",
+	
+	"telegram": {
+		"enabled": true,
+		"token": "${FREQTRADE__TELEGRAM__TOKEN}",
+		"chat_id": "${FREQTRADE__TELEGRAM__CHAT_ID}",
+		
+		"_notification_settings": "以下为通知设置（可选）",
+		"notification_settings": {
+			"status": "silent",
+			"warning": "on",
+			"startup": "on",
+			"entry": "on",
+			"entry_cancel": "on",
+			"entry_fill": "on",
+			"exit": "on",
+			"exit_cancel": "on",
+			"exit_fill": "on",
+			"protection_trigger": "on",
+			"protection_trigger_global": "on"
+		},
+		
+		"_reload_config": "是否允许通过 Telegram 重新加载配置",
+		"reload_config": true,
+		
+		"_balance_dust_level": "余额显示的最小值（低于此值不显示）",
+		"balance_dust_level": 0.01
+	},
+	
+	"_usage": "使用环境变量设置 FREQTRADE__TELEGRAM__TOKEN 和 FREQTRADE__TELEGRAM__CHAT_ID",
+	"_example": "export FREQTRADE__TELEGRAM__TOKEN='your_bot_token' && export FREQTRADE__TELEGRAM__CHAT_ID='your_chat_id'"
+}

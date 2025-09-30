@@ -1,0 +1,71 @@
+{
+	"_comment": "一目均衡图配置 - 适用于 ichiV1 策略",
+	
+	"exchange": {
+		"name": "binance"
+	},
+	
+	"plot_config": {
+		"main_plot": {
+			"_comment": "一目均衡云图配置",
+			
+			"senkou_a": {
+				"color": "green",
+				"fill_to": "senkou_b",
+				"fill_label": "Ichimoku Cloud",
+				"fill_color": "rgba(255,76,46,0.2)"
+			},
+			"senkou_b": {
+				"color": "red"
+			},
+			"tenkan_sen": {
+				"color": "blue",
+				"type": "line"
+			},
+			"kijun_sen": {
+				"color": "red",
+				"type": "line"
+			},
+			
+			"trend_close_5m": {
+				"color": "#FF5733"
+			},
+			"trend_close_15m": {
+				"color": "#FF8333"
+			},
+			"trend_close_30m": {
+				"color": "#FFB533"
+			},
+			"trend_close_1h": {
+				"color": "#FFE633"
+			},
+			"trend_close_2h": {
+				"color": "#E3FF33"
+			},
+			"trend_close_4h": {
+				"color": "#C4FF33"
+			},
+			"trend_close_6h": {
+				"color": "#61FF33"
+			},
+			"trend_close_8h": {
+				"color": "#33FF7D"
+			}
+		},
+		
+		"subplots": {
+			"fan_magnitude": {
+				"fan_magnitude": {
+					"color": "purple"
+				}
+			},
+			"fan_magnitude_gain": {
+				"fan_magnitude_gain": {
+					"color": "orange"
+				}
+			}
+		}
+	},
+	
+	"_usage": "使用方法：freqtrade plot-dataframe --config user_data/configs/config_plot_ichimoku.json --strategy ichiV1 --pairs BTC/USDT:USDT"
+}

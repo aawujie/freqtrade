@@ -1,0 +1,117 @@
+{
+	"_comment": "绘图配置模块 - 用于 freqtrade plot-dataframe 命令",
+	
+	"exchange": {
+		"name": "binance"
+	},
+	
+	"plot_config": {
+		"main_plot": {
+			"_comment": "主图指标配置",
+			
+			"sma20": {
+				"color": "blue",
+				"type": "line"
+			},
+			"sma50": {
+				"color": "cyan",
+				"type": "line"
+			},
+			"ema50": {
+				"color": "orange",
+				"type": "line"
+			},
+			"ema100": {
+				"color": "purple",
+				"type": "line"
+			},
+			"ema200": {
+				"color": "#888888",
+				"type": "line"
+			},
+			
+			"bb_upperband": {
+				"color": "rgba(100,100,255,0.3)",
+				"fill_to": "bb_lowerband",
+				"fill_color": "rgba(100,100,255,0.1)"
+			},
+			"bb_middleband": {
+				"color": "rgba(100,100,255,0.5)"
+			},
+			"bb_lowerband": {
+				"color": "rgba(100,100,255,0.3)"
+			}
+		},
+		
+		"subplots": {
+			"_comment": "子图配置",
+			
+			"Volume": {
+				"volume": {
+					"color": "rgba(100,100,255,0.4)",
+					"type": "bar",
+					"plotly": {
+						"opacity": 0.4
+					}
+				}
+			},
+			
+			"RSI": {
+				"rsi": {
+					"color": "red",
+					"plotly": {
+						"shapes": [
+							{
+								"type": "line",
+								"y0": 70,
+								"y1": 70,
+								"line": {
+									"color": "red",
+									"dash": "dash"
+								}
+							},
+							{
+								"type": "line",
+								"y0": 30,
+								"y1": 30,
+								"line": {
+									"color": "green",
+									"dash": "dash"
+								}
+							}
+						]
+					}
+				}
+			},
+			
+			"MACD": {
+				"macd": {
+					"color": "blue",
+					"type": "line"
+				},
+				"macdsignal": {
+					"color": "red",
+					"type": "line"
+				},
+				"macdhist": {
+					"color": "gray",
+					"type": "bar",
+					"plotly": {
+						"opacity": 0.5
+					}
+				}
+			},
+			
+			"Stochastic": {
+				"slowk": {
+					"color": "blue"
+				},
+				"slowd": {
+					"color": "orange"
+				}
+			}
+		}
+	},
+	
+	"_usage": "使用方法：freqtrade plot-dataframe --config user_data/configs/config_plot.json --strategy DoubleMAStrategy --pairs BTC/USDT"
+}

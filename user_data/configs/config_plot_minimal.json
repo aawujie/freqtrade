@@ -1,0 +1,33 @@
+{
+	"_comment": "最简绘图配置 - 只显示基本指标",
+	
+	"exchange": {
+		"name": "binance"
+	},
+	
+	"plot_config": {
+		"main_plot": {
+			"ema50": {
+				"color": "orange"
+			},
+			"ema200": {
+				"color": "#888888"
+			}
+		},
+		"subplots": {
+			"Volume": {
+				"volume": {
+					"type": "bar",
+					"plotly": {
+						"opacity": 0.4
+					}
+				}
+			},
+			"RSI": {
+				"rsi": {
+					"color": "red"
+				}
+			}
+		}
+	}
+}

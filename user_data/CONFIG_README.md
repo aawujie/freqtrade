@@ -13,7 +13,11 @@ user_data/
     ├── config_secrets.json          # ❌ 敏感信息（不提交Git）
     ├── config_secrets.json.example  # ✅ 敏感信息示例
     ├── config_pairs_spot.json       # ✅ 现货交易对列表
-    └── config_pairs_futures.json    # ✅ 合约交易对列表
+    ├── config_pairs_futures.json    # ✅ 合约交易对列表
+    ├── config_plot.json             # ✅ 通用绘图配置
+    ├── config_plot_minimal.json     # ✅ 最简绘图配置
+    ├── config_plot_double_ma.json   # ✅ 双均线策略绘图
+    └── config_plot_ichimoku.json    # ✅ 一目均衡策略绘图
 ```
 
 ## 🎯 快速开始
