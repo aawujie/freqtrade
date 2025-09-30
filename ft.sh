@@ -12,7 +12,7 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 # Docker 容器名
-CONTAINER="freqtrade"
+CONTAINER="freqtrade-ws-freqtrade-run-fffba6a7b6b9"
 
 # 帮助信息
 show_help() {
@@ -93,7 +93,7 @@ case "${1}" in
         STRATEGY=${2:-ichiV1}
         CONFIG=$(get_config $STRATEGY)
         echo -e "${GREEN}🚀 启动交易: $STRATEGY${NC}"
-        docker exec -it $CONTAINER freqtrade trade \
+        docker exec $CONTAINER freqtrade trade \
             -c /freqtrade/$CONFIG \
             --strategy $STRATEGY
         ;;
@@ -115,7 +115,8 @@ case "${1}" in
         check_container
         STRATEGY=${2:-ichiV1}
         CONFIG=$(get_config $STRATEGY)
-        TIMERANGE=${3:-$(date -u -d '30 days ago' +%Y%m%d)-$(date -u +%Y%m%d)}
+        # macOS date 命令不支持 -d 参数，使用 -v 代替
+        TIMERANGE=${3:-$(date -u -v-30d +%Y%m%d)-$(date -u +%Y%m%d)}
         echo -e "${GREEN}🔙 回测: $STRATEGY (时间: $TIMERANGE)${NC}"
         docker exec $CONTAINER freqtrade backtesting \
             -c /freqtrade/$CONFIG \
@@ -127,7 +128,8 @@ case "${1}" in
         check_container
         STRATEGY=${2:-ichiV1}
         CONFIG=$(get_config $STRATEGY)
-        TIMERANGE=$(date -u -d '7 days ago' +%Y%m%d)-$(date -u +%Y%m%d)
+        # macOS date 命令使用 -v 参数
+        TIMERANGE=$(date -u -v-7d +%Y%m%d)-$(date -u +%Y%m%d)
         echo -e "${GREEN}⚡ 快速回测: $STRATEGY (最近7天)${NC}"
         docker exec $CONTAINER freqtrade backtesting \
             -c /freqtrade/$CONFIG \

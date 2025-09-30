@@ -13,7 +13,7 @@
 	"max_open_trades": 5,
 	"stake_amount": 500,
 	
-	"db_url": "sqlite:///database/tradesv3_double_ma.sqlite",
+	"db_url": "sqlite:////freqtrade/user_data/database/tradesv3_double_ma.sqlite",
 	"logfile": "logs/freqtrade_double_ma.log",
 	"bot_name": "freqtrade_double_ma",
 	
