@@ -310,9 +310,9 @@ async def download_data(request: DownloadDataRequest):
         "--datadir", "/freqtrade/user_data/data"
     ]
     
-    result = run_command(cmd, timeout=600)
+    # 清除环境变量，避免触发 Telegram 配置验证
+    result = run_command(cmd, timeout=600, clear_env=True)
     
-    # download-data 不需要完整配置，stderr 中的警告可以忽略
     output = result["stdout"] + result["stderr"]
     
     if not result["success"]:
