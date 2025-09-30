@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freqtrade 控制面板</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .card h2 {
+            color: #333;
+            margin-bottom: 16px;
+            font-size: 1.5em;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 8px;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+        
+        .btn-success {
+            background: #48bb78;
+            color: white;
+        }
+        
+        .btn-danger {
+            background: #f56565;
+            color: white;
+        }
+        
+        .btn-info {
+            background: #4299e1;
+            color: white;
+        }
+        
+        .status-box {
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 16px;
+            margin-top: 16px;
+        }
+        
+        .status-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .status-item:last-child {
+            border-bottom: none;
+        }
+        
+        .status-label {
+            font-weight: 600;
+            color: #4a5568;
+        }
+        
+        .status-value {
+            color: #2d3748;
+        }
+        
+        .status-running {
+            color: #48bb78;
+            font-weight: bold;
+        }
+        
+        .status-stopped {
+            color: #f56565;
+            font-weight: bold;
+        }
+        
+        .logs-container {
+            background: #1a202c;
+            color: #e2e8f0;
+            border-radius: 8px;
+            padding: 16px;
+            max-height: 400px;
+            overflow-y: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        
+        .log-line {
+            padding: 2px 0;
+        }
+        
+        .log-error {
+            color: #fc8181;
+        }
+        
+        .log-warning {
+            color: #f6ad55;
+        }
+        
+        .log-info {
+            color: #63b3ed;
+        }
+        
+        .input-group {
+            margin: 16px 0;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #4a5568;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        
+        .loading {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #f3f3f3;
+            border-top: 2px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            padding: 16px 24px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 1000;
+            animation: slideIn 0.3s ease;
+        }
+        
+        @keyframes slideIn {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        .toast.success {
+            border-left: 4px solid #48bb78;
+        }
+        
+        .toast.error {
+            border-left: 4px solid #f56565;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Freqtrade 控制面板</h1>
+        
+        <!-- 系统状态 -->
+        <div class="card">
+            <h2>📊 系统状态</h2>
+            <div class="status-box" id="statusBox">
+                <div class="status-item">
+                    <span class="status-label">容器状态:</span>
+                    <span class="status-value" id="containerStatus">加载中...</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">机器人状态:</span>
+                    <span class="status-value" id="botStatus">加载中...</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">最后更新:</span>
+                    <span class="status-value" id="lastUpdate">-</span>
+                </div>
+            </div>
+            <div class="btn-group" style="margin-top: 16px;">
+                <button class="btn-info" onclick="refreshStatus()">🔄 刷新状态</button>
+                <button class="btn-info" onclick="getSystemInfo()">ℹ️ 系统信息</button>
+            </div>
+        </div>
+        
+        <!-- 交易控制 -->
+        <div class="card">
+            <h2>💰 交易控制</h2>
+            <div class="input-group">
+                <label for="strategySelect">选择策略:</label>
+                <select id="strategySelect">
+                    <option value="ichiV1">ichiV1 (一目均衡)</option>
+                    <option value="DoubleMAStrategy">DoubleMAStrategy (双均线)</option>
+                </select>
+            </div>
+            <div class="btn-group">
+                <button class="btn-success" onclick="startTrade()">▶️ 启动交易</button>
+                <button class="btn-danger" onclick="stopTrade()">⏸️ 停止交易</button>
+                <button class="btn-info" onclick="listStrategies()">📋 查看策略列表</button>
+            </div>
+        </div>
+        
+        <!-- 回测 -->
+        <div class="card">
+            <h2>🔙 回测</h2>
+            <div class="input-group">
+                <label for="timerangeInput">时间范围 (可选, 格式: 20240901-20240930):</label>
+                <input type="text" id="timerangeInput" placeholder="留空使用全部数据">
+            </div>
+            <div class="btn-group">
+                <button class="btn-primary" onclick="runBacktest()">🚀 运行回测</button>
+                <button class="btn-info" onclick="getBacktestResults()">📊 查看结果</button>
+            </div>
+        </div>
+        
+        <!-- 数据管理 -->
+        <div class="card">
+            <h2>💾 数据管理</h2>
+            <div class="btn-group">
+                <button class="btn-success" onclick="downloadData()">⬇️ 下载数据 (BTC/ETH)</button>
+                <button class="btn-info" onclick="listData()">📋 查看已下载数据</button>
+            </div>
+        </div>
+        
+        <!-- 日志 -->
+        <div class="card">
+            <h2>📝 系统日志</h2>
+            <div class="btn-group">
+                <button class="btn-info" onclick="getRecentLogs()">📄 查看日志</button>
+                <button class="btn-danger" onclick="getErrorLogs()">⚠️ 错误日志</button>
+                <button class="btn-primary" onclick="clearLogs()">🗑️ 清空显示</button>
+            </div>
+            <div class="logs-container" id="logsContainer">
+                <div class="log-line">等待加载日志...</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:8000';
+        
+        // 显示通知
+        function showToast(message, type = 'success') {
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            toast.textContent = message;
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.remove();
+            }, 3000);
+        }
+        
+        // API 请求封装
+        async function apiRequest(endpoint, method = 'GET', body = null) {
+            try {
+                const options = {
+                    method,
+                    headers: { 'Content-Type': 'application/json' }
+                };
+                if (body) options.body = JSON.stringify(body);
+                
+                const response = await fetch(`${API_BASE}${endpoint}`, options);
+                const data = await response.json();
+                
+                if (!response.ok) {
+                    throw new Error(data.detail || '请求失败');
+                }
+                
+                return data;
+            } catch (error) {
+                showToast(error.message, 'error');
+                throw error;
+            }
+        }
+        
+        // 刷新状态
+        async function refreshStatus() {
+            try {
+                const data = await apiRequest('/trade/status');
+                
+                document.getElementById('containerStatus').textContent = data.container_status || '未知';
+                
+                const botStatus = document.getElementById('botStatus');
+                if (data.bot_running) {
+                    botStatus.textContent = '运行中';
+                    botStatus.className = 'status-value status-running';
+                } else {
+                    botStatus.textContent = '已停止';
+                    botStatus.className = 'status-value status-stopped';
+                }
+                
+                document.getElementById('lastUpdate').textContent = new Date().toLocaleString('zh-CN');
+                
+                showToast('状态已更新');
+            } catch (error) {
+                console.error('刷新状态失败:', error);
+            }
+        }
+        
+        // 启动交易
+        async function startTrade() {
+            const strategy = document.getElementById('strategySelect').value;
+            try {
+                const data = await apiRequest('/trade/start', 'POST', { strategy });
+                showToast(data.message);
+                setTimeout(refreshStatus, 2000);
+            } catch (error) {
+                console.error('启动交易失败:', error);
+            }
+        }
+        
+        // 停止交易
+        async function stopTrade() {
+            try {
+                const data = await apiRequest('/trade/stop', 'POST');
+                showToast(data.message);
+                setTimeout(refreshStatus, 1000);
+            } catch (error) {
+                console.error('停止交易失败:', error);
+            }
+        }
+        
+        // 运行回测
+        async function runBacktest() {
+            const strategy = document.getElementById('strategySelect').value;
+            const timerange = document.getElementById('timerangeInput').value;
+            
+            showToast('回测开始，请稍候...', 'success');
+            
+            try {
+                const body = { strategy };
+                if (timerange) body.timerange = timerange;
+                
+                const data = await apiRequest('/backtest/run', 'POST', body);
+                showToast('回测完成！');
+                
+                // 显示结果
+                displayLogs(data.data.output);
+            } catch (error) {
+                console.error('回测失败:', error);
+            }
+        }
+        
+        // 获取回测结果
+        async function getBacktestResults() {
+            try {
+                const data = await apiRequest('/backtest/results');
+                displayLogs(JSON.stringify(data.data, null, 2));
+                showToast('回测结果已加载');
+            } catch (error) {
+                console.error('获取回测结果失败:', error);
+            }
+        }
+        
+        // 下载数据
+        async function downloadData() {
+            showToast('开始下载数据，请稍候...', 'success');
+            
+            try {
+                const data = await apiRequest('/data/download', 'POST', {
+                    pairs: ['BTC/USDT:USDT', 'ETH/USDT:USDT'],
+                    timeframes: ['5m', '1h'],
+                    days: 30
+                });
+                showToast('数据下载完成！');
+            } catch (error) {
+                console.error('下载数据失败:', error);
+            }
+        }
+        
+        // 查看已下载数据
+        async function listData() {
+            try {
+                const data = await apiRequest('/data/list');
+                displayLogs(data.data);
+                showToast('数据列表已加载');
+            } catch (error) {
+                console.error('查看数据失败:', error);
+            }
+        }
+        
+        // 列出策略
+        async function listStrategies() {
+            try {
+                const data = await apiRequest('/strategies/list');
+                displayLogs(`可用策略 (${data.count}个):\n\n` + data.strategies.join('\n'));
+                showToast(`找到 ${data.count} 个策略`);
+            } catch (error) {
+                console.error('获取策略列表失败:', error);
+            }
+        }
+        
+        // 获取最近日志
+        async function getRecentLogs() {
+            try {
+                const data = await apiRequest('/logs/recent?lines=100');
+                displayLogs(data.logs);
+                showToast('日志已加载');
+            } catch (error) {
+                console.error('获取日志失败:', error);
+            }
+        }
+        
+        // 获取错误日志
+        async function getErrorLogs() {
+            try {
+                const data = await apiRequest('/logs/errors');
+                if (data.errors.length === 0) {
+                    displayLogs('没有错误日志 ✅');
+                } else {
+                    displayLogs(`找到 ${data.count} 个错误:\n\n` + data.errors.join('\n'));
+                }
+                showToast(`错误数量: ${data.count}`);
+            } catch (error) {
+                console.error('获取错误日志失败:', error);
+            }
+        }
+        
+        // 获取系统信息
+        async function getSystemInfo() {
+            try {
+                const data = await apiRequest('/system/info');
+                displayLogs(JSON.stringify(data, null, 2));
+                showToast('系统信息已加载');
+            } catch (error) {
+                console.error('获取系统信息失败:', error);
+            }
+        }
+        
+        // 显示日志
+        function displayLogs(logs) {
+            const container = document.getElementById('logsContainer');
+            const lines = logs.split('\n');
+            
+            container.innerHTML = lines.map(line => {
+                let className = 'log-line';
+                if (line.includes('ERROR')) className += ' log-error';
+                else if (line.includes('WARNING')) className += ' log-warning';
+                else if (line.includes('INFO')) className += ' log-info';
+                
+                return `<div class="${className}">${escapeHtml(line)}</div>`;
+            }).join('');
+            
+            // 滚动到底部
+            container.scrollTop = container.scrollHeight;
+        }
+        
+        // 清空日志显示
+        function clearLogs() {
+            document.getElementById('logsContainer').innerHTML = '<div class="log-line">日志已清空</div>';
+        }
+        
+        // HTML 转义
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+        
+        // 页面加载时自动刷新状态
+        refreshStatus();
+        
+        // 每 30 秒自动刷新状态
+        setInterval(refreshStatus, 30000);
+    </script>
+</body>
+</html>
