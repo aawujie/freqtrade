@@ -2172,6 +2172,8 @@ dependencies = [
     { name = "pandas", version = "2.3.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.9'" },
     { name = "pyarrow", version = "17.0.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9'" },
     { name = "pyarrow", version = "21.0.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.9'" },
+    { name = "requests", version = "2.32.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9'" },
+    { name = "requests", version = "2.32.5", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.9'" },
 ]
 
 [package.metadata]
@@ -2183,6 +2185,7 @@ requires-dist = [
     { name = "mkdocs-material", specifier = ">=9.0.0" },
     { name = "pandas", specifier = ">=2.0.3" },
     { name = "pyarrow", specifier = ">=17.0.0" },
+    { name = "requests", specifier = ">=2.32.4" },
 ]
 
 [[package]]
