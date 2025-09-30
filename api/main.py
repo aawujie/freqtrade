@@ -98,15 +98,22 @@ class CommandResponse(BaseModel):
 
 # ==================== 工具函数 ====================
 
-def run_command(cmd: List[str], timeout: int = 300) -> dict:
+def run_command(cmd: List[str], timeout: int = 300, clear_env: bool = False) -> dict:
     """执行 shell 命令"""
     try:
+        env = None
+        if clear_env:
+            # 清除 Freqtrade 环境变量，避免配置验证
+            env = {k: v for k, v in subprocess.os.environ.items() 
+                   if not k.startswith('FREQTRADE__')}
+        
         result = subprocess.run(
             cmd,
             capture_output=True,
             text=True,
             timeout=timeout,
-            cwd=BASE_PATH
+            cwd=BASE_PATH,
+            env=env
         )
         return {
             "success": result.returncode == 0,
