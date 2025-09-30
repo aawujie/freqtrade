@@ -296,15 +296,20 @@ async def download_data(request: DownloadDataRequest):
         "docker", "exec", CONTAINER_NAME,
         "freqtrade", "download-data",
         "--exchange", "binance",
+        "--trading-mode", "futures",  # 期货数据
         "--pairs"] + request.pairs + [
         "--timeframes"] + request.timeframes + [
-        "--days", str(request.days)
+        "--days", str(request.days),
+        "--datadir", "/freqtrade/user_data/data"
     ]
     
     result = run_command(cmd, timeout=600)
     
+    # download-data 不需要完整配置，stderr 中的警告可以忽略
+    output = result["stdout"] + result["stderr"]
+    
     if not result["success"]:
-        raise HTTPException(status_code=500, detail=result["stderr"])
+        raise HTTPException(status_code=500, detail=output)
     
     return CommandResponse(
         success=True,
@@ -312,7 +317,8 @@ async def download_data(request: DownloadDataRequest):
         data={
             "pairs": request.pairs,
             "timeframes": request.timeframes,
-            "days": request.days
+            "days": request.days,
+            "output": output
         }
     )
 
