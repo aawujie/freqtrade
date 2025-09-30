@@ -12,6 +12,11 @@
 user_data/backtest_results/*.zip
 user_data/backtest_results/*.meta.json
  
+# 忽略绘图输出文件（通常很大）
+user_data/plot/*.html
+user_data/plot/*.png
+user_data/plot/*.json
+
 # 敏感配置（不要提交）
 *.env
 *.secrets.json
