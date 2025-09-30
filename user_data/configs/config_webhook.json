@@ -14,7 +14,7 @@
 		"startup": {
 			"msg_type": "text",
 			"content": {
-				"text": "🚀 Freqtrade 已启动\n策略: {strategy}\n状态: {status}"
+				"text": "🚀 Freqtrade 已启动\n{status}"
 			}
 		},
 		
@@ -38,7 +38,7 @@
 		"entry": {
 			"msg_type": "text",
 			"content": {
-				"text": "🟢 BUY {pair} @ {limit:.8f}\n投入: {stake_amount:.8f} {stake_currency}\n策略: {strategy}\n时间: {date}"
+				"text": "🟢 BUY {pair} @ {limit:.8f}\n投入: {stake_amount:.8f} {stake_currency}\n时间: {date}"
 			}
 		},
 		
