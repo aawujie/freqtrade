@@ -45,9 +45,9 @@
 		]
 	},
 	
-	"_api_override": "使用端口 8082（避免冲突）",
+	"_api_comment": "禁用 API Server（避免端口冲突，使用 Telegram 控制）",
 	"api_server": {
-		"listen_port": 8082
+		"enabled": false
 	},
 	
 	"bot_name": "ichiV1",
