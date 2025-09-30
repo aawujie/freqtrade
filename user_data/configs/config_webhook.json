@@ -1,17 +1,20 @@
 {
-	"_comment": "Webhook 通知模块配置 - 支持企业微信、钉钉、飞书等",
-	"_how_to_disable": "如果不需要某个通知，可以删除对应的配置项或添加 'enabled': false",
+	"$schema": "https://schema.freqtrade.io/schema.json",
+	"_comment": "通用 Webhook 通知配置 - 适用于所有策略",
+	"_how_to_use": "在策略配置中引用此文件，可通过 webhook.enabled 控制是否启用",
 	
 	"webhook": {
 		"enabled": true,
 		"url": "${FREQTRADE__WEBHOOK__URL}",
 		"format": "json",
+		"retries": 3,
+		"retry_delay": 0.1,
 		
 		"_startup": "机器人启动通知",
 		"startup": {
 			"msg_type": "text",
 			"content": {
-				"text": "🚀 Freqtrade 已启动\n状态: {status}"
+				"text": "🚀 Freqtrade 已启动\n策略: {strategy}\n状态: {status}"
 			}
 		},
 		
@@ -35,7 +38,7 @@
 		"entry": {
 			"msg_type": "text",
 			"content": {
-				"text": "🟢 买入信号\n交易对: {pair}\n价格: {limit:.8f}\n投入: {stake_amount:.8f} {stake_currency}\n时间: {date}"
+				"text": "🟢 BUY {pair} @ {limit:.8f}\n投入: {stake_amount:.8f} {stake_currency}\n策略: {strategy}\n时间: {date}"
 			}
 		},
 		
@@ -43,7 +46,7 @@
 		"entry_fill": {
 			"msg_type": "text",
 			"content": {
-				"text": "✅ 买入成交\n交易对: {pair}\n成交价: {open_rate:.8f}\n数量: {amount:.8f}\n成本: {stake_amount:.8f} {stake_currency}"
+				"text": "✅ Entry Filled\n交易对: {pair}\n成交价: {open_rate:.8f}\n数量: {amount:.8f}\n成本: {stake_amount:.8f} {stake_currency}"
 			}
 		},
 		
@@ -51,7 +54,7 @@
 		"entry_cancel": {
 			"msg_type": "text",
 			"content": {
-				"text": "❌ 买入订单已取消\n交易对: {pair}\n原因: {reason}"
+				"text": "❌ Entry Cancelled\n交易对: {pair}\n原因: {reason}"
 			}
 		},
 		
@@ -59,7 +62,7 @@
 		"exit": {
 			"msg_type": "text",
 			"content": {
-				"text": "🔴 卖出信号\n交易对: {pair}\n价格: {limit:.8f}\n收益: {profit_amount:.8f} {stake_currency} ({profit_ratio:.2%})\n原因: {exit_reason}"
+				"text": "🔴 SELL {pair} @ {limit:.8f}\nPnL: {profit_amount:.8f} {stake_currency} ({profit_ratio:.2%})\n原因: {exit_reason}"
 			}
 		},
 		
@@ -67,7 +70,7 @@
 		"exit_fill": {
 			"msg_type": "text",
 			"content": {
-				"text": "💰 卖出成交\n交易对: {pair}\n成交价: {close_rate:.8f}\n收益: {profit_amount:.8f} {stake_currency} ({profit_ratio:.2%})\n持仓时长: {duration}"
+				"text": "💰 Exit Filled\n交易对: {pair}\n成交价: {close_rate:.8f}\n收益: {profit_amount:.8f} {stake_currency} ({profit_ratio:.2%})\n持仓: {duration}"
 			}
 		},
 		
@@ -75,16 +78,40 @@
 		"exit_cancel": {
 			"msg_type": "text",
 			"content": {
-				"text": "❌ 卖出订单已取消\n交易对: {pair}\n原因: {reason}"
+				"text": "❌ Exit Cancelled\n交易对: {pair}\n原因: {reason}"
+			}
+		},
+		
+		"_protection_trigger": "保护触发通知",
+		"protection_trigger": {
+			"msg_type": "text",
+			"content": {
+				"text": "🛡️ Protection Triggered\n类型: {protection}\n交易对: {pair}"
+			}
+		},
+		
+		"_protection_trigger_global": "全局保护触发",
+		"protection_trigger_global": {
+			"msg_type": "text",
+			"content": {
+				"text": "🛡️ Global Protection\n类型: {protection}"
 			}
 		}
 	},
 	
 	"_usage_notes": [
-		"1. 设置环境变量: export FREQTRADE__WEBHOOK__URL='your_webhook_url'",
-		"2. 企业微信机器人: https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=YOUR_KEY",
-		"3. 钉钉机器人: https://oapi.dingtalk.com/robot/send?access_token=YOUR_TOKEN",
-		"4. 飞书机器人: https://open.feishu.cn/open-apis/bot/v2/hook/YOUR_HOOK",
-		"5. 可用变量请参考: https://www.freqtrade.io/en/stable/webhook-config/"
+		"✅ 通用配置，适用于所有策略",
+		"✅ 支持企业微信、钉钉、飞书等 Webhook",
+		"✅ 在策略配置中可覆盖 enabled 参数控制启用/禁用",
+		"✅ 可在策略配置中覆盖消息格式",
+		"",
+		"设置环境变量:",
+		"export FREQTRADE__WEBHOOK__URL='your_webhook_url'",
+		"",
+		"企业微信: https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=YOUR_KEY",
+		"钉钉: https://oapi.dingtalk.com/robot/send?access_token=YOUR_TOKEN",
+		"飞书: https://open.feishu.cn/open-apis/bot/v2/hook/YOUR_HOOK",
+		"",
+		"可用变量: https://www.freqtrade.io/en/stable/webhook-config/"
 	]
 }

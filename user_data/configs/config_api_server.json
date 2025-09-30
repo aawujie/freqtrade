@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schema.freqtrade.io/schema.json",
+	"_comment": "通用 API Server / Web UI 配置 - 适用于所有策略",
+	"_how_to_use": "在策略配置中引用此文件，可覆盖 listen_port 使用不同端口",
+	
+	"api_server": {
+		"enabled": true,
+		"listen_ip_address": "0.0.0.0",
+		"listen_port": 8080,
+		"verbosity": "error",
+		"enable_openapi": false,
+		"jwt_secret_key": "${FREQTRADE__API_SERVER__JWT_SECRET_KEY}",
+		"ws_token": "${FREQTRADE__API_SERVER__WS_TOKEN}",
+		"CORS_origins": [],
+		"username": "${FREQTRADE__API_SERVER__USERNAME}",
+		"password": "${FREQTRADE__API_SERVER__PASSWORD}"
+	},
+	
+	"_usage_notes": [
+		"✅ 通用配置，适用于所有策略",
+		"✅ 在策略配置中可覆盖 enabled/listen_port 等参数",
+		"✅ 建议使用环境变量保护敏感信息",
+		"",
+		"设置环境变量:",
+		"export FREQTRADE__API_SERVER__JWT_SECRET_KEY='your_secret'",
+		"export FREQTRADE__API_SERVER__WS_TOKEN='your_token'",
+		"export FREQTRADE__API_SERVER__USERNAME='your_username'",
+		"export FREQTRADE__API_SERVER__PASSWORD='your_password'",
+		"",
+		"多策略运行时可覆盖端口:",
+		"在策略配置中添加: \"api_server\": { \"listen_port\": 8081 }"
+	]
+}

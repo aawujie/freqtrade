@@ -1,0 +1,14 @@
+{
+	"$schema": "https://schema.freqtrade.io/schema.json",
+	"_comment": "组合配置示例 - 使用 add_config_files 引入其他配置",
+	
+	"add_config_files": [
+		"configs/config_base.json",
+		"configs/config_secrets.json",
+		"configs/config_pairs_futures.json"
+	],
+	
+	"strategy": "ichiV1",
+	"db_url": "sqlite:///trades_ichiV1.sqlite",
+	"logfile": "logs/freqtrade_ichiV1_8081.log"
+}

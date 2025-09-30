@@ -1,0 +1,34 @@
+{
+	"$schema": "https://schema.freqtrade.io/schema.json",
+	"_comment": "Web UI 服务器配置 - 只启动 Web 界面，不进行交易",
+	
+	"add_config_files": [
+		"configs/config_api_server.json",
+		"configs/config_telegram.json"
+	],
+	
+	"exchange": {
+		"name": "binance",
+		"pair_whitelist": ["BTC/USDT", "ETH/USDT"],
+		"pair_blacklist": []
+	},
+	
+	"bot_name": "freqtrade-web",
+	"initial_state": "running",
+	"stake_currency": "USDT",
+	"strategy": "SampleStrategy",
+	"timeframe": "5m",
+	"dry_run": true,
+	"max_open_trades": 3,
+	"stake_amount": 100,
+	"fiat_display_currency": "USD",
+	"trading_mode": "spot",
+	
+	"pairlists": [
+		{"method": "StaticPairList"}
+	],
+	
+	"internals": {
+		"process_throttle_secs": 5
+	}
+}

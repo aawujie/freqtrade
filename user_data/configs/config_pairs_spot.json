@@ -1,23 +1,49 @@
 {
-	"_comment": "现货交易对配置",
+	"$schema": "https://schema.freqtrade.io/schema.json",
+	"_comment": "通用现货交易对配置 - 适用于所有现货策略",
+	"_how_to_use": "在策略配置中引用此文件，可覆盖 exchange.pair_whitelist 自定义交易对",
 	
 	"trading_mode": "spot",
-	"timeframe": "1h",
 	
 	"exchange": {
+		"name": "binance",
+		"_pair_whitelist_comment": "默认主流币种，策略配置可覆盖",
 		"pair_whitelist": [
 			"BTC/USDT",
 			"ETH/USDT",
+			"BNB/USDT",
 			"SOL/USDT",
+			"XRP/USDT",
 			"ADA/USDT",
-			"DOT/USDT"
+			"DOGE/USDT",
+			"DOT/USDT",
+			"MATIC/USDT",
+			"LTC/USDT",
+			"LINK/USDT",
+			"AVAX/USDT"
 		],
+		"_pair_blacklist_comment": "常见问题币种，策略配置可追加",
 		"pair_blacklist": [
-			"BNB/.*",
-			".*UP/.*",
-			".*DOWN/.*",
-			".*BEAR/.*",
-			".*BULL/.*"
-		]
-	}
+			"(BTCDOM|DEFI)/.*",
+			".*(_PREMIUM|BEAR|BULL|DOWN|HALF|HEDGE|UP|[1235][SL])/.*"
+		],
+		"ccxt_config": {},
+		"ccxt_async_config": {}
+	},
+	
+	"_usage_notes": [
+		"✅ 通用现货配置，适用于所有现货策略",
+		"✅ 提供默认主流币种白名单",
+		"✅ 在策略配置中可覆盖/追加交易对",
+		"",
+		"覆盖交易对示例:",
+		"\"exchange\": {",
+		"  \"pair_whitelist\": [\"BTC/USDT\", \"ETH/USDT\"]",
+		"}",
+		"",
+		"追加黑名单示例:",
+		"\"exchange\": {",
+		"  \"pair_blacklist\": [\"SHIB/USDT\", \"PEPE/USDT\"]",
+		"}"
+	]
 }

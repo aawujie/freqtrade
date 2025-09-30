@@ -1,127 +1,61 @@
 {
-  "add_config_files": [
-      "config_plot.json"
-  ],
-  "strategy": "ichiV1",
-  "timeframe": "5m",
-  "force_entry_enable": true,
-
-  "dry_run": true,
-  "dry_run_wallet": 100,
-  "max_open_trades": 5,
-  "tradable_balance_ratio": 0.99,
-  "fiat_display_currency": "USD",
-  "stake_currency": "USDT",
-  "stake_amount": 20,
-  "amend_last_stake_amount": true,
-  "trading_mode": "future",
-
-  "pairlists": [
-    {
-      "method": "StaticPairList"
-    }
-  ],
-
-  "entry_pricing": {
-    "price_side": "same",
-    "use_order_book": true,
-    "order_book_top": 1,
-    "price_last_balance": 0,
-    "check_depth_of_market": {
-      "enabled": false,
-      "bids_to_ask_delta": 1
-    }
-  },
-
-  "exit_pricing": {
-    "price_side": "same",
-    "use_order_book": true,
-    "order_book_top": 1
-  },
-
-  "unfilledtimeout": {
-    "entry": 10,
-    "exit": 10,
-    "exit_timeout_count": 0,
-    "unit": "minutes"
-  },
-
-  "exchange": {
-    "name": "binance",
-    "pair_whitelist": [
-      "BTC/USDT",
-      "ETC/USDT",
-      "BNB/USDT",
-      "DOGE/USDT",
-      "ASTER/USDT:USDT"
-    ],
-    "pair_blacklist": [
-      "LINK/USDT",
-      "LTC/USDT",
-      "SOL/USDT",
-      "ETH/USDT",
-      "XRP/USDT",
-      "ADA/USDT",
-      "DOT/USDT",
-      "BCH/USDT",
-      "ALGO/USDT",
-      "LUNA/USDT"
-    ],
-    "ccxt_config": {},
-    "ccxt_async_config": {}
-  },
-
-  "telegram": {
-    "enabled": false,
-    "token": "",
-    "chat_id": ""
-  },
-
-  "webhook": {
-    "enabled": true,
-    "url": "${FREQTRADE__WEBHOOK__URL}",
-    "format": "json",
-    "startup": {
-      "msg_type": "text",
-      "content": { "text": "{status}" }
-    },
-    "warning": {
-      "msg_type": "text",
-      "content": { "text": "{status}" }
-    },
-    "status": {
-      "msg_type": "text",
-      "content": { "text": "状态：{status}" }
-    },
-    "entry": {
-      "msg_type": "text",
-      "content": { "text": "BUY {pair} @ {limit:8f} stake {stake_amount:8f} {stake_currency}" }
-    },
-    "exit": {
-      "msg_type": "text",
-      "content": { "text": "SELL {pair} @ {limit:8f} PnL {profit_amount:8f} {stake_currency} ({profit_ratio})" }
-    }
-  },
-
-  "api_server": {
-    "enabled": true,
-    "listen_ip_address": "0.0.0.0",
-    "listen_port": 8080,
-    "verbosity": "error",
-    "enable_openapi": false,
-    "jwt_secret_key": "",
-    "ws_token": "",
-    "CORS_origins": [],
-    "username": "freqtrader",
-    "password": "123"
-  },
-
-  "bot_name": "ichiV1",
-  "initial_state": "running"
-  ,
-  "internals": {
-    "process_throttle_secs": 5
-  }
+	"$schema": "https://schema.freqtrade.io/schema.json",
+	"_comment": "ichiV1 策略模块化配置 - 引用通用配置模块",
+	
+	"add_config_files": [
+		"configs/config_base.json",
+		"configs/config_secrets.json",
+		"configs/config_pairs_futures.json",
+		"configs/config_webhook.json",
+		"configs/config_api_server.json",
+		"configs/config_plot_ichimoku.json"
+	],
+	
+	"_override_comment": "以下参数会覆盖通用配置中的默认值",
+	
+	"strategy": "ichiV1",
+	"timeframe": "5m",
+	"force_entry_enable": true,
+	
+	"_trading_params": "覆盖 config_base.json 中的参数",
+	"dry_run_wallet": 100,
+	"max_open_trades": 5,
+	"stake_amount": 20,
+	"amend_last_stake_amount": true,
+	
+	"_pairs_override": "覆盖通用合约交易对配置",
+	"exchange": {
+		"pair_whitelist": [
+			"BTC/USDT:USDT",
+			"ETH/USDT:USDT",
+			"BNB/USDT:USDT",
+			"DOGE/USDT:USDT"
+		],
+		"pair_blacklist": [
+			"LINK/USDT:USDT",
+			"LTC/USDT:USDT",
+			"SOL/USDT:USDT",
+			"XRP/USDT:USDT",
+			"ADA/USDT:USDT",
+			"DOT/USDT:USDT",
+			"BCH/USDT:USDT",
+			"ALGO/USDT:USDT",
+			"LUNA/USDT:USDT",
+			"ASTER/USDT:USDT"
+		]
+	},
+	
+	"_api_override": "使用端口 8080（覆盖默认）",
+	"api_server": {
+		"listen_port": 8080
+	},
+	
+	"bot_name": "ichiV1",
+	"initial_state": "running",
+	"db_url": "sqlite:///trades_ichiV1.sqlite",
+	"logfile": "logs/freqtrade_ichiV1_8081.log",
+	
+	"internals": {
+		"process_throttle_secs": 5
+	}
 }
-
-

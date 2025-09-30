@@ -1,0 +1,127 @@
+{
+  "add_config_files": [
+      "config_plot.json"
+  ],
+  "strategy": "ichiV1",
+  "timeframe": "5m",
+  "force_entry_enable": true,
+
+  "dry_run": true,
+  "dry_run_wallet": 100,
+  "max_open_trades": 5,
+  "tradable_balance_ratio": 0.99,
+  "fiat_display_currency": "USD",
+  "stake_currency": "USDT",
+  "stake_amount": 20,
+  "amend_last_stake_amount": true,
+  "trading_mode": "future",
+
+  "pairlists": [
+    {
+      "method": "StaticPairList"
+    }
+  ],
+
+  "entry_pricing": {
+    "price_side": "same",
+    "use_order_book": true,
+    "order_book_top": 1,
+    "price_last_balance": 0,
+    "check_depth_of_market": {
+      "enabled": false,
+      "bids_to_ask_delta": 1
+    }
+  },
+
+  "exit_pricing": {
+    "price_side": "same",
+    "use_order_book": true,
+    "order_book_top": 1
+  },
+
+  "unfilledtimeout": {
+    "entry": 10,
+    "exit": 10,
+    "exit_timeout_count": 0,
+    "unit": "minutes"
+  },
+
+  "exchange": {
+    "name": "binance",
+    "pair_whitelist": [
+      "BTC/USDT",
+      "ETC/USDT",
+      "BNB/USDT",
+      "DOGE/USDT",
+      "ASTER/USDT:USDT"
+    ],
+    "pair_blacklist": [
+      "LINK/USDT",
+      "LTC/USDT",
+      "SOL/USDT",
+      "ETH/USDT",
+      "XRP/USDT",
+      "ADA/USDT",
+      "DOT/USDT",
+      "BCH/USDT",
+      "ALGO/USDT",
+      "LUNA/USDT"
+    ],
+    "ccxt_config": {},
+    "ccxt_async_config": {}
+  },
+
+  "telegram": {
+    "enabled": false,
+    "token": "",
+    "chat_id": ""
+  },
+
+  "webhook": {
+    "enabled": true,
+    "url": "${FREQTRADE__WEBHOOK__URL}",
+    "format": "json",
+    "startup": {
+      "msg_type": "text",
+      "content": { "text": "{status}" }
+    },
+    "warning": {
+      "msg_type": "text",
+      "content": { "text": "{status}" }
+    },
+    "status": {
+      "msg_type": "text",
+      "content": { "text": "状态：{status}" }
+    },
+    "entry": {
+      "msg_type": "text",
+      "content": { "text": "BUY {pair} @ {limit:8f} stake {stake_amount:8f} {stake_currency}" }
+    },
+    "exit": {
+      "msg_type": "text",
+      "content": { "text": "SELL {pair} @ {limit:8f} PnL {profit_amount:8f} {stake_currency} ({profit_ratio})" }
+    }
+  },
+
+  "api_server": {
+    "enabled": true,
+    "listen_ip_address": "0.0.0.0",
+    "listen_port": 8080,
+    "verbosity": "error",
+    "enable_openapi": false,
+    "jwt_secret_key": "",
+    "ws_token": "",
+    "CORS_origins": [],
+    "username": "freqtrader",
+    "password": "123"
+  },
+
+  "bot_name": "ichiV1",
+  "initial_state": "running"
+  ,
+  "internals": {
+    "process_throttle_secs": 5
+  }
+}
+
+
