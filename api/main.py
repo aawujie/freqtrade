@@ -39,16 +39,57 @@ BASE_PATH = Path("/Users/apple/code/freqtrade-ws")
 class TradeRequest(BaseModel):
     strategy: str = "ichiV1"
     config: Optional[str] = None
+    
+    model_config = {
+        "json_schema_extra": {
+            "examples": [
+                {"strategy": "ichiV1"},
+                {"strategy": "DoubleMAStrategy"}
+            ]
+        }
+    }
 
 class BacktestRequest(BaseModel):
     strategy: str = "ichiV1"
     timerange: Optional[str] = None
     config: Optional[str] = None
+    
+    model_config = {
+        "json_schema_extra": {
+            "examples": [
+                {
+                    "strategy": "ichiV1",
+                    "timerange": "20240901-20240930"
+                },
+                {
+                    "strategy": "DoubleMAStrategy",
+                    "timerange": "20240801-20241231"
+                }
+            ]
+        }
+    }
 
 class DownloadDataRequest(BaseModel):
-    pairs: List[str] = ["BTC/USDT:USDT"]
+    pairs: List[str] = ["BTC/USDT:USDT", "ETH/USDT:USDT"]
     timeframes: List[str] = ["5m", "1h"]
     days: int = 30
+    
+    model_config = {
+        "json_schema_extra": {
+            "examples": [
+                {
+                    "pairs": ["BTC/USDT:USDT", "ETH/USDT:USDT"],
+                    "timeframes": ["5m", "1h"],
+                    "days": 30
+                },
+                {
+                    "pairs": ["BTC/USDT:USDT"],
+                    "timeframes": ["5m"],
+                    "days": 7
+                }
+            ]
+        }
+    }
 
 class CommandResponse(BaseModel):
     success: bool
