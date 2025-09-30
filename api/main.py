@@ -441,6 +441,117 @@ async def get_system_info():
         "timestamp": datetime.now().isoformat()
     }
 
+@app.get("/config/list")
+async def list_configs():
+    """列出所有可用的配置文件（动态扫描）"""
+    try:
+        # 扫描 user_data 根目录的配置文件（策略配置）
+        strategy_result = run_command([
+            "docker", "exec", CONTAINER_NAME,
+            "find", "/freqtrade/user_data",
+            "-maxdepth", "1",
+            "-name", "config_*.json",
+            "-type", "f"
+        ])
+        
+        # 扫描 user_data/configs 目录的配置文件（子配置）
+        sub_result = run_command([
+            "docker", "exec", CONTAINER_NAME,
+            "find", "/freqtrade/user_data/configs",
+            "-maxdepth", "1",
+            "-name", "*.json",
+            "-type", "f"
+        ])
+        
+        strategy_configs = []
+        sub_configs = []
+        
+        # 处理策略配置
+        if strategy_result["success"] and strategy_result["stdout"]:
+            for line in strategy_result["stdout"].strip().split('\n'):
+                if line:
+                    # 提取相对路径
+                    path = line.replace('/freqtrade/', '')
+                    # 提取文件名（去掉扩展名）
+                    filename = path.split('/')[-1].replace('config_', '').replace('.json', '')
+                    # 生成友好的显示名称
+                    name = filename.replace('_', ' ').title() + ' 配置'
+                    strategy_configs.append({"name": name, "path": path})
+        
+        # 处理子配置
+        if sub_result["success"] and sub_result["stdout"]:
+            for line in sub_result["stdout"].strip().split('\n'):
+                if line and '.example' not in line:  # 跳过示例文件
+                    # 提取相对路径
+                    path = line.replace('/freqtrade/', '')
+                    # 提取文件名
+                    filename = path.split('/')[-1].replace('config_', '').replace('.json', '')
+                    # 生成友好的显示名称
+                    name_map = {
+                        'base': '基础配置',
+                        'api_server': 'API Server 配置',
+                        'telegram': 'Telegram 配置',
+                        'webhook': 'Webhook 配置',
+                        'pairs_spot': '现货交易对配置',
+                        'pairs_futures': '合约交易对配置',
+                        'plot': '绘图配置',
+                        'plot_ichimoku': 'Ichimoku 绘图配置',
+                        'plot_double_ma': 'DoubleMA 绘图配置',
+                        'plot_minimal': '最小绘图配置',
+                        'secrets': '敏感信息配置',
+                    }
+                    name = name_map.get(filename, filename.replace('_', ' ').title() + ' 配置')
+                    sub_configs.append({"name": name, "path": path})
+        
+        # 排序（按名称）
+        strategy_configs.sort(key=lambda x: x['name'])
+        sub_configs.sort(key=lambda x: x['name'])
+        
+        return {
+            "strategy_configs": strategy_configs,
+            "sub_configs": sub_configs,
+            "total": len(strategy_configs) + len(sub_configs)
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"扫描配置文件失败: {str(e)}")
+
+@app.get("/config/view")
+async def view_config(file_path: str):
+    """查看配置文件内容"""
+    try:
+        # 安全检查：只允许访问 user_data 目录下的 json 文件
+        if not file_path.startswith("user_data/") or not file_path.endswith(".json"):
+            raise HTTPException(status_code=400, detail="无效的配置文件路径")
+        
+        # 读取容器中的配置文件
+        result = run_command([
+            "docker", "exec", CONTAINER_NAME,
+            "cat", f"/freqtrade/{file_path}"
+        ])
+        
+        if not result["success"]:
+            raise HTTPException(status_code=404, detail=f"配置文件不存在: {file_path}")
+        
+        # 尝试解析 JSON 并格式化
+        try:
+            config_data = json.loads(result["stdout"])
+            formatted_json = json.dumps(config_data, indent=2, ensure_ascii=False)
+            return {
+                "file_path": file_path,
+                "content": formatted_json,
+                "valid_json": True
+            }
+        except json.JSONDecodeError:
+            return {
+                "file_path": file_path,
+                "content": result["stdout"],
+                "valid_json": False
+            }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
 if __name__ == "__main__":
     import uvicorn
+    # 0.0.0.0 表示监听所有网络接口（localhost、局域网、公网）
+    # 这样可以通过 localhost:8000 或 10.24.32.125:8000 访问
     uvicorn.run(app, host="0.0.0.0", port=8000)

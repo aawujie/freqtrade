@@ -137,6 +137,12 @@ def run_all_tests():
     print(f"\n{Colors.YELLOW}[系统信息]{Colors.END}")
     results.append(test_get("/system/info", "查看系统信息"))
     
+    # 8. 配置查看
+    print(f"\n{Colors.YELLOW}[配置管理]{Colors.END}")
+    results.append(test_get("/config/list", "列出所有配置文件"))
+    results.append(test_get("/config/view?file_path=user_data/config_ichiV1.json", "查看 ichiV1 策略配置"))
+    results.append(test_get("/config/view?file_path=user_data/configs/config_base.json", "查看基础配置"))
+    
     # 统计结果
     print(f"\n{Colors.BLUE}{'='*60}{Colors.END}")
     passed = sum(results)

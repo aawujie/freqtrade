@@ -68,6 +68,12 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
         
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
         .btn-primary {
             background: #667eea;
             color: white;
@@ -126,10 +132,56 @@
             font-weight: bold;
         }
         
-        .logs-container {
+        /* 响应展示区域 */
+        .response-container {
+            margin-top: 16px;
+            border-radius: 8px;
+            overflow: hidden;
+            max-height: 0;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .response-container.show {
+            max-height: 500px;
+            opacity: 1;
+        }
+        
+        .response-header {
+            background: #edf2f7;
+            padding: 12px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #cbd5e0;
+        }
+        
+        .response-header h3 {
+            margin: 0;
+            font-size: 14px;
+            color: #4a5568;
+            font-weight: 600;
+        }
+        
+        .response-close {
+            background: transparent;
+            border: none;
+            color: #718096;
+            cursor: pointer;
+            padding: 4px 8px;
+            font-size: 18px;
+            line-height: 1;
+        }
+        
+        .response-close:hover {
+            color: #2d3748;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .response-content {
             background: #1a202c;
             color: #e2e8f0;
-            border-radius: 8px;
             padding: 16px;
             max-height: 400px;
             overflow-y: auto;
@@ -138,8 +190,37 @@
             line-height: 1.6;
         }
         
-        .log-line {
+        .response-line {
             padding: 2px 0;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+        
+        .logs-container {
+            background: #1a202c;
+            color: #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 16px;
+            min-height: 300px;
+            max-height: 500px;
+            overflow-y: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.8;
+            border: 2px solid #2d3748;
+        }
+        
+        .log-line {
+            padding: 4px 0;
+            border-left: 3px solid transparent;
+            padding-left: 12px;
+            margin-left: -12px;
+        }
+        
+        .log-line:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-left-color: #667eea;
         }
         
         .log-error {
@@ -181,6 +262,7 @@
             border-top: 2px solid #667eea;
             border-radius: 50%;
             animation: spin 1s linear infinite;
+            margin-left: 8px;
         }
         
         @keyframes spin {
@@ -245,6 +327,14 @@
                 <button class="btn-info" onclick="refreshStatus()">🔄 刷新状态</button>
                 <button class="btn-info" onclick="getSystemInfo()">ℹ️ 系统信息</button>
             </div>
+            <!-- 系统信息响应区 -->
+            <div class="response-container" id="systemResponse">
+                <div class="response-header">
+                    <h3>📋 响应信息</h3>
+                    <button class="response-close" onclick="closeResponse('systemResponse')">✕</button>
+                </div>
+                <div class="response-content" id="systemResponseContent"></div>
+            </div>
         </div>
         
         <!-- 交易控制 -->
@@ -262,6 +352,14 @@
                 <button class="btn-danger" onclick="stopTrade()">⏸️ 停止交易</button>
                 <button class="btn-info" onclick="listStrategies()">📋 查看策略列表</button>
             </div>
+            <!-- 交易响应区 -->
+            <div class="response-container" id="tradeResponse">
+                <div class="response-header">
+                    <h3>📋 响应信息</h3>
+                    <button class="response-close" onclick="closeResponse('tradeResponse')">✕</button>
+                </div>
+                <div class="response-content" id="tradeResponseContent"></div>
+            </div>
         </div>
         
         <!-- 回测 -->
@@ -275,6 +373,14 @@
                 <button class="btn-primary" onclick="runBacktest()">🚀 运行回测</button>
                 <button class="btn-info" onclick="getBacktestResults()">📊 查看结果</button>
             </div>
+            <!-- 回测响应区 -->
+            <div class="response-container" id="backtestResponse">
+                <div class="response-header">
+                    <h3>📋 回测结果</h3>
+                    <button class="response-close" onclick="closeResponse('backtestResponse')">✕</button>
+                </div>
+                <div class="response-content" id="backtestResponseContent"></div>
+            </div>
         </div>
         
         <!-- 数据管理 -->
@@ -283,6 +389,44 @@
             <div class="btn-group">
                 <button class="btn-success" onclick="downloadData()">⬇️ 下载数据 (BTC/ETH)</button>
                 <button class="btn-info" onclick="listData()">📋 查看已下载数据</button>
+            </div>
+            <!-- 数据管理响应区 -->
+            <div class="response-container" id="dataResponse">
+                <div class="response-header">
+                    <h3>📋 数据信息</h3>
+                    <button class="response-close" onclick="closeResponse('dataResponse')">✕</button>
+                </div>
+                <div class="response-content" id="dataResponseContent"></div>
+            </div>
+        </div>
+        
+        <!-- 配置查看 -->
+        <div class="card">
+            <h2>⚙️ 配置查看</h2>
+            <div class="input-group">
+                <label for="configTypeSelect">配置类型:</label>
+                <select id="configTypeSelect" onchange="updateConfigList()">
+                    <option value="strategy">策略配置</option>
+                    <option value="sub">子配置</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="configFileSelect">选择配置文件:</label>
+                <select id="configFileSelect">
+                    <option value="">加载中...</option>
+                </select>
+            </div>
+            <div class="btn-group">
+                <button class="btn-primary" onclick="viewConfig()">👁️ 查看配置</button>
+                <button class="btn-info" onclick="refreshConfigList()">🔄 刷新列表</button>
+            </div>
+            <!-- 配置查看响应区 -->
+            <div class="response-container" id="configResponse">
+                <div class="response-header">
+                    <h3>📋 配置内容</h3>
+                    <button class="response-close" onclick="closeResponse('configResponse')">✕</button>
+                </div>
+                <div class="response-content" id="configResponseContent"></div>
             </div>
         </div>
         
@@ -295,13 +439,17 @@
                 <button class="btn-primary" onclick="clearLogs()">🗑️ 清空显示</button>
             </div>
             <div class="logs-container" id="logsContainer">
-                <div class="log-line">等待加载日志...</div>
+                <div class="log-line" style="color: #a0aec0; font-style: italic;">
+                    💡 提示: 点击上方按钮查看系统日志或错误日志
+                </div>
             </div>
         </div>
     </div>
 
     <script>
-        const API_BASE = 'http://localhost:8000';
+        // 自动获取当前访问的地址作为 API 地址
+        const API_BASE = `${window.location.protocol}//${window.location.hostname}:8000`;
+        let configsData = null;
         
         // 显示通知
         function showToast(message, type = 'success') {
@@ -313,6 +461,37 @@
             setTimeout(() => {
                 toast.remove();
             }, 3000);
+        }
+        
+        // 显示响应内容
+        function showResponse(containerId, contentId, data) {
+            const container = document.getElementById(containerId);
+            const content = document.getElementById(contentId);
+            
+            // 格式化数据
+            let displayData = '';
+            if (typeof data === 'object') {
+                displayData = JSON.stringify(data, null, 2);
+            } else {
+                displayData = String(data);
+            }
+            
+            // 设置内容
+            content.innerHTML = `<div class="response-line">${escapeHtml(displayData)}</div>`;
+            
+            // 显示容器
+            container.classList.add('show');
+            
+            // 滚动到容器
+            setTimeout(() => {
+                container.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 100);
+        }
+        
+        // 关闭响应区域
+        function closeResponse(containerId) {
+            const container = document.getElementById(containerId);
+            container.classList.remove('show');
         }
         
         // API 请求封装
@@ -362,11 +541,23 @@
             }
         }
         
+        // 获取系统信息
+        async function getSystemInfo() {
+            try {
+                const data = await apiRequest('/system/info');
+                showResponse('systemResponse', 'systemResponseContent', data);
+                showToast('系统信息已加载');
+            } catch (error) {
+                console.error('获取系统信息失败:', error);
+            }
+        }
+        
         // 启动交易
         async function startTrade() {
             const strategy = document.getElementById('strategySelect').value;
             try {
                 const data = await apiRequest('/trade/start', 'POST', { strategy });
+                showResponse('tradeResponse', 'tradeResponseContent', data);
                 showToast(data.message);
                 setTimeout(refreshStatus, 2000);
             } catch (error) {
@@ -378,10 +569,23 @@
         async function stopTrade() {
             try {
                 const data = await apiRequest('/trade/stop', 'POST');
+                showResponse('tradeResponse', 'tradeResponseContent', data);
                 showToast(data.message);
                 setTimeout(refreshStatus, 1000);
             } catch (error) {
                 console.error('停止交易失败:', error);
+            }
+        }
+        
+        // 列出策略
+        async function listStrategies() {
+            try {
+                const data = await apiRequest('/strategies/list');
+                const content = `可用策略 (${data.count}个):\n\n${data.strategies.join('\n')}`;
+                showResponse('tradeResponse', 'tradeResponseContent', content);
+                showToast(`找到 ${data.count} 个策略`);
+            } catch (error) {
+                console.error('获取策略列表失败:', error);
             }
         }
         
@@ -397,10 +601,8 @@
                 if (timerange) body.timerange = timerange;
                 
                 const data = await apiRequest('/backtest/run', 'POST', body);
+                showResponse('backtestResponse', 'backtestResponseContent', data.data?.output || data);
                 showToast('回测完成！');
-                
-                // 显示结果
-                displayLogs(data.data.output);
             } catch (error) {
                 console.error('回测失败:', error);
             }
@@ -410,7 +612,7 @@
         async function getBacktestResults() {
             try {
                 const data = await apiRequest('/backtest/results');
-                displayLogs(JSON.stringify(data.data, null, 2));
+                showResponse('backtestResponse', 'backtestResponseContent', data);
                 showToast('回测结果已加载');
             } catch (error) {
                 console.error('获取回测结果失败:', error);
@@ -427,6 +629,7 @@
                     timeframes: ['5m', '1h'],
                     days: 30
                 });
+                showResponse('dataResponse', 'dataResponseContent', data);
                 showToast('数据下载完成！');
             } catch (error) {
                 console.error('下载数据失败:', error);
@@ -437,21 +640,10 @@
         async function listData() {
             try {
                 const data = await apiRequest('/data/list');
-                displayLogs(data.data);
+                showResponse('dataResponse', 'dataResponseContent', data.data || data);
                 showToast('数据列表已加载');
             } catch (error) {
                 console.error('查看数据失败:', error);
-            }
-        }
-        
-        // 列出策略
-        async function listStrategies() {
-            try {
-                const data = await apiRequest('/strategies/list');
-                displayLogs(`可用策略 (${data.count}个):\n\n` + data.strategies.join('\n'));
-                showToast(`找到 ${data.count} 个策略`);
-            } catch (error) {
-                console.error('获取策略列表失败:', error);
             }
         }
         
@@ -473,7 +665,7 @@
                 if (data.errors.length === 0) {
                     displayLogs('没有错误日志 ✅');
                 } else {
-                    displayLogs(`找到 ${data.count} 个错误:\n\n` + data.errors.join('\n'));
+                    displayLogs(`找到 ${data.count} 个错误:\n\n${data.errors.join('\n')}`);
                 }
                 showToast(`错误数量: ${data.count}`);
             } catch (error) {
@@ -481,18 +673,7 @@
             }
         }
         
-        // 获取系统信息
-        async function getSystemInfo() {
-            try {
-                const data = await apiRequest('/system/info');
-                displayLogs(JSON.stringify(data, null, 2));
-                showToast('系统信息已加载');
-            } catch (error) {
-                console.error('获取系统信息失败:', error);
-            }
-        }
-        
-        // 显示日志
+        // 显示日志（仅用于系统日志区域）
         function displayLogs(logs) {
             const container = document.getElementById('logsContainer');
             const lines = logs.split('\n');
@@ -512,7 +693,61 @@
         
         // 清空日志显示
         function clearLogs() {
-            document.getElementById('logsContainer').innerHTML = '<div class="log-line">日志已清空</div>';
+            document.getElementById('logsContainer').innerHTML = '<div class="log-line" style="color: #a0aec0; font-style: italic;">💡 提示: 点击上方按钮查看系统日志或错误日志</div>';
+        }
+        
+        // 加载配置文件列表
+        async function loadConfigList() {
+            try {
+                const data = await apiRequest('/config/list');
+                configsData = data;
+                updateConfigList();
+            } catch (error) {
+                console.error('加载配置列表失败:', error);
+            }
+        }
+        
+        // 更新配置文件下拉列表
+        function updateConfigList() {
+            if (!configsData) return;
+            
+            const typeSelect = document.getElementById('configTypeSelect');
+            const fileSelect = document.getElementById('configFileSelect');
+            const type = typeSelect.value;
+            
+            const configs = type === 'strategy' ? configsData.strategy_configs : configsData.sub_configs;
+            
+            fileSelect.innerHTML = configs.map(config => 
+                `<option value="${config.path}">${config.name}</option>`
+            ).join('');
+        }
+        
+        // 刷新配置列表
+        async function refreshConfigList() {
+            await loadConfigList();
+            showToast('配置列表已刷新');
+        }
+        
+        // 查看配置文件
+        async function viewConfig() {
+            const fileSelect = document.getElementById('configFileSelect');
+            const filePath = fileSelect.value;
+            
+            if (!filePath) {
+                showToast('请选择配置文件', 'error');
+                return;
+            }
+            
+            try {
+                const data = await apiRequest(`/config/view?file_path=${encodeURIComponent(filePath)}`);
+                
+                // 显示配置内容，添加文件路径提示
+                const displayContent = `// 配置文件: ${data.file_path}\n${data.valid_json ? '// JSON 格式有效 ✓' : '// JSON 格式无效 ✗'}\n\n${data.content}`;
+                showResponse('configResponse', 'configResponseContent', displayContent);
+                showToast('配置已加载');
+            } catch (error) {
+                console.error('查看配置失败:', error);
+            }
         }
         
         // HTML 转义
@@ -522,8 +757,9 @@
             return div.innerHTML;
         }
         
-        // 页面加载时自动刷新状态
+        // 页面加载时自动刷新状态和加载配置列表
         refreshStatus();
+        loadConfigList();
         
         // 每 30 秒自动刷新状态
         setInterval(refreshStatus, 30000);
