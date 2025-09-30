@@ -6,6 +6,7 @@
 *.pkl
 *.fthypt
 *.DS_Store
+*.pid
 
 # 忽略回测结果文件
 *.zip

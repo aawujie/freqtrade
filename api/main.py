@@ -31,7 +31,7 @@ app.add_middleware(
 )
 
 # 配置
-CONTAINER_NAME = "freqtrade-ws-freqtrade-run-fffba6a7b6b9"
+CONTAINER_NAME = "freqtrade"
 BASE_PATH = Path("/Users/apple/code/freqtrade-ws")
 
 # ==================== 数据模型 ====================
@@ -310,7 +310,9 @@ async def list_data():
     """列出已下载的数据"""
     result = run_command([
         "docker", "exec", CONTAINER_NAME,
-        "freqtrade", "list-data", "--show-timerange"
+        "freqtrade", "list-data",
+        "-c", "/freqtrade/user_data/config_ichiV1.json",
+        "--show-timerange"
     ])
     
     if not result["success"]:
