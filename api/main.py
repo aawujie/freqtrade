@@ -298,35 +298,11 @@ async def get_backtest_results():
 
 @app.post("/data/download", response_model=CommandResponse)
 async def download_data(request: DownloadDataRequest):
-    """下载交易数据"""
-    cmd = [
-        "docker", "exec", CONTAINER_NAME,
-        "freqtrade", "download-data",
-        "--exchange", "binance",
-        "--trading-mode", "futures",  # 期货数据
-        "--pairs"] + request.pairs + [
-        "--timeframes"] + request.timeframes + [
-        "--days", str(request.days),
-        "--datadir", "/freqtrade/user_data/data"
-    ]
-    
-    # 清除环境变量，避免触发 Telegram 配置验证
-    result = run_command(cmd, timeout=600, clear_env=True)
-    
-    output = result["stdout"] + result["stderr"]
-    
-    if not result["success"]:
-        raise HTTPException(status_code=500, detail=output)
-    
+    """下载交易数据（暂时禁用，请使用命令行）"""
     return CommandResponse(
-        success=True,
-        message=f"数据下载完成",
-        data={
-            "pairs": request.pairs,
-            "timeframes": request.timeframes,
-            "days": request.days,
-            "output": output
-        }
+        success=False,
+        message="下载数据功能暂时禁用，请直接使用命令行：docker exec <container> freqtrade download-data --exchange binance --trading-mode futures --pairs BTC/USDT:USDT --timeframes 5m 1h --days 30",
+        data=None
     )
 
 @app.get("/data/list")
