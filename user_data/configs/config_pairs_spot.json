@@ -1,0 +1,23 @@
+{
+	"_comment": "现货交易对配置",
+	
+	"trading_mode": "spot",
+	"timeframe": "1h",
+	
+	"exchange": {
+		"pair_whitelist": [
+			"BTC/USDT",
+			"ETH/USDT",
+			"SOL/USDT",
+			"ADA/USDT",
+			"DOT/USDT"
+		],
+		"pair_blacklist": [
+			"BNB/.*",
+			".*UP/.*",
+			".*DOWN/.*",
+			".*BEAR/.*",
+			".*BULL/.*"
+		]
+	}
+}
