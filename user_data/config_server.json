@@ -1,0 +1,22 @@
+{
+	"$schema": "https://schema.freqtrade.io/schema.json",
+	"_comment": "Web Server 配置 - 用于 docker-compose webserver 命令",
+	
+	"add_config_files": [
+		"configs/config_base.json",
+		"configs/config_secrets.json",
+		"configs/config_api_server.json",
+		"configs/config_telegram.json",
+		"configs/config_webhook.json"
+	],
+	
+	"exchange": {
+		"name": "binance",
+		"pair_whitelist": ["BTC/USDT", "ETH/USDT"],
+		"pair_blacklist": []
+	},
+	
+	"bot_name": "freqtrade-webserver",
+	"strategy": "SampleStrategy",
+	"timeframe": "5m"
+}
